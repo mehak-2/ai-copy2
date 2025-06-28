@@ -60,7 +60,7 @@ export default async function Home() {
     }
 
     return (
-        <div className="min-h-screen bg-white dark:bg-gray-950  transition-colors duration-200">
+        <div className="min-h-screen bg-white   transition-colors duration-200">
          
             <Header /> 
           
@@ -76,9 +76,9 @@ export default async function Home() {
                 <div className="relative z-10 container mx-auto pt-20 ">
                     <div className="text-center max-w-4xl ">
                         {/* Badge */}
-                        <div className="  gap-2 py-2 mb-6 animate-fade-in dark:hover:bg-gray-900/80 transition-all duration-300 cursor-default items-start  text-left">
+                        <div className="  gap-2 py-2 mb-6 animate-fade-in  transition-all duration-300 cursor-default items-start  text-left">
                            
-                            <span className="text-sm font-medium text-[#FFFFFF] dark:text-gray-100  ">
+                            <span className="text-sm font-medium text-[#FFFFFF]   ">
                                 AI-Powered EAA Scanner
                             </span>
                         </div>
@@ -202,12 +202,12 @@ export default async function Home() {
             <RealUserTestimonial />
             <section className="py-8  ">
   <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-12 text-center tracking-tight ">
+    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12 text-center tracking-tight ">
       Our Development Partners
     </h2>
     <div className="flex justify-center">
       <div className="relative max-w-7xl w-full rounded-3xl p-1  border border-[#D5D7DA]  ">
-        <div className="relative z-10 flex flex-col items-center text-center rounded-3xl bg-white/70  p-10 md:p-12 border border-white/30 dark:border-gray-800/60">
+        <div className="relative z-10 flex flex-col items-center text-center rounded-3xl bg-white/70  p-10 md:p-12 ">
          
           {/* Logo */}
           <div className="relative mb-6">
@@ -220,10 +220,10 @@ export default async function Home() {
               priority
             />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight drop-shadow-sm">
+          <h3 className="text-2xl font-bold text-gray-900  mb-2 tracking-tight drop-shadow-sm">
             Maxtron Innovations
           </h3>
-          <p className="text-lg text-gray-700 dark:text-gray-300 font-medium mb-0  mx-auto">
+          <p className="text-lg text-gray-700  font-medium mb-0  mx-auto">
             Transform Your Business and Growth with <span className="bg-[#444CE7] to-pink-600 bg-clip-text text-transparent font-semibold">360° Cutting-Edge Tech Solutions</span>
           </p>
         </div>
@@ -235,17 +235,17 @@ export default async function Home() {
 </section>
 
             {/* Blog Section - Enhanced with Real API Data */}
-            <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900/20" id="blog">
+            <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50  " id="blog">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 bg-primary-100 dark:bg-primary-900/40 rounded-full px-4 py-2 mb-6">
-                            <FileText className="w-4 h-4 text-primary-700 dark:text-primary-200" />
-                            <span className="text-sm font-medium text-primary-800 dark:text-primary-200">Latest Insights</span>
+                        <div className="inline-flex items-center gap-2 bg-primary-100  rounded-full px-4 py-2 mb-6">
+                            <FileText className="w-4 h-4 text-primary-700 " />
+                            <span className="text-sm font-medium text-primary-800 ">Latest Insights</span>
                         </div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900  mb-4">
                             Expert Web Optimization Tips
                         </h2>
-                        <p className="text-xl text-gray-900 dark:text-gray-100 max-w-2xl mx-auto">
+                        <p className="text-xl text-gray-900  max-w-2xl mx-auto">
                             Stay ahead with the latest accessibility insights, compliance tips, and web optimization strategies
                         </p>
                     </div>
@@ -269,13 +269,13 @@ export default async function Home() {
                     ) : (
                         // Fallback content when no blogs are available
                         <div className="text-center py-12">
-                            <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/40 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                <FileText className="w-8 h-8 text-primary-700 dark:text-primary-200" />
+                            <div className="w-16 h-16 bg-primary-100  rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <FileText className="w-8 h-8 text-primary-700 " />
                             </div>
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                            <h3 className="text-xl font-semibold text-gray-900 mb-3">
                                 New Articles Coming Soon
                             </h3>
-                            <p className="text-gray-900 dark:text-gray-300 max-w-md mx-auto mb-8">
+                            <p className="text-gray-900  max-w-md mx-auto mb-8">
                                 We're preparing expert insights on web accessibility and EU compliance. Check back soon for the latest updates.
                             </p>
                             <Link href="/blog" className="btn-primary group">

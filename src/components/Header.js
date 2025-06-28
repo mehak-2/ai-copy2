@@ -35,7 +35,7 @@ export default function Header() {
     ]
 
     return (
-        <header className="bg-[#111111] dark:bg-gray-900 shadow-sm  dark:border-gray-800 fixed w-full top-0 z-40 transition-colors duration-150">
+        <header className="bg-[#111111]  shadow-sm   fixed w-full top-0 z-40 transition-colors duration-150">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
@@ -54,7 +54,7 @@ export default function Header() {
                         </div>
 
 
-                        <span className="text-[25px] font-bold text-white dark:text-white">axto.ai</span>
+                        <span className="text-[25px] font-bold text-white ">axto.ai</span>
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -63,7 +63,7 @@ export default function Header() {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="text-[#FFFFFF] dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200"
+                                className="text-[#FFFFFF]  hover:text-primary-600  font-medium transition-colors duration-200"
                             >
                                 {item.name}
                             </Link>
@@ -101,7 +101,7 @@ export default function Header() {
                         {/* <ThemeToggle /> */}
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="p-2 rounded-lg text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-150"
+                            className="p-2 rounded-lg text-gray-400  hover:text-gray-600  hover:bg-gray-100  transition-colors duration-150"
                             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         >
                             {isMenuOpen ? (
@@ -116,22 +116,22 @@ export default function Header() {
 
                 {/* Mobile Navigation */}
                 {isMenuOpen && (
-                    <div className="lg:hidden py-4 border-t border-gray-100 dark:border-gray-800">
+                    <div className="lg:hidden py-4 border-t border-gray-100 ">
                         <div className="flex flex-col space-y-4">
                             {navigation.map((item) => (
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2 transition-colors duration-150"
+                                    className="text-gray-600  hover:text-primary-600  font-medium py-2 transition-colors duration-150"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {item.name}
                                 </Link>
                             ))}
                             {isAuthenticated ? (
-                                <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                                    <div className="flex items-center gap-2 mb-3 px-3 py-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                                        <div className="w-6 h-6 rounded-full overflow-hidden bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
+                                <div className="mt-4 pt-4 border-t border-gray-200 ">
+                                    <div className="flex items-center gap-2 mb-3 px-3 py-2 bg-gray-50  rounded-lg">
+                                        <div className="w-6 h-6 rounded-full overflow-hidden bg-blue-100  flex items-center justify-center">
                                             {user?.picture ? (
                                                 <img
                                                     src={user.picture}
@@ -139,14 +139,14 @@ export default function Header() {
                                                     className="w-full h-full object-cover"
                                                 />
                                             ) : (
-                                                <User className="w-3 h-3 text-blue-600 dark:text-blue-400" />
+                                                <User className="w-3 h-3 text-blue-600 " />
                                             )}
                                         </div>
                                         <div className="flex-1 min-w-0">
-                                            <p className="text-sm font-medium text-gray-700 dark:text-gray-300 truncate">
+                                            <p className="text-sm font-medium text-gray-700  truncate">
                                                 {user?.name || 'User'}
                                             </p>
-                                            <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
+                                            <p className="text-xs text-gray-500  truncate">
                                                 {user?.email || ''}
                                             </p>
                                         </div>
@@ -154,7 +154,7 @@ export default function Header() {
                                     <Link href={`https://app.axto.ai/`}>
                                         <button
                                             onClick={() => setIsMenuOpen(false)}
-                                            className="flex items-center gap-2 w-full px-3 py-2 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-150"
+                                            className="flex items-center gap-2 w-full px-3 py-2 text-gray-600  hover:bg-gray-50  rounded-lg transition-all duration-150"
                                         >
                                             <Target className="w-4 h-4" />
                                             <span className="text-sm font-medium">Dashboard</span>
@@ -165,7 +165,7 @@ export default function Header() {
                                             handleSignOutClick()
                                             setIsMenuOpen(false)
                                         }}
-                                        className="flex items-center gap-2 w-full px-3 py-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-lg transition-all duration-150"
+                                        className="flex items-center gap-2 w-full px-3 py-2 text-red-600 hover:bg-red-50  rounded-lg transition-all duration-150"
                                     >
                                         <LogOut className="w-4 h-4" />
                                         <span className="text-sm font-medium">Sign out</span>

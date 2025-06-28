@@ -11,25 +11,25 @@ const Webinar = () => {
   const percentFilled = Math.round((attendees / capacity) * 100);
 
   return (
-    <div className="flex flex-col-reverse mb-4 lg:flex-row gap-8 bg-white dark:bg-gray-900 rounded-2xl shadow-xl  max-w-7xl mx-auto px-6 lg:px-8 py-8  mt-4">
+    <div className="flex flex-col-reverse mb-4 lg:flex-row gap-8 bg-white  rounded-2xl shadow-xl  max-w-7xl mx-auto px-6 lg:px-8 py-8  mt-4">
       {/* Left: Event Details */}
       <div className="flex-1 ">
         {/* Badges */}
         <div className="flex items-center gap-3 mb-4">
-          <span className="px-4 py-1 rounded-full text-xs font-semibold bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">Webinar</span>
-          <span className="px-4 py-1 rounded-full text-xs font-semibold border border-blue-200 text-blue-700 bg-blue-50 dark:bg-blue-900/30 dark:text-blue-200 dark:border-blue-700">Upcoming</span>
+          <span className="px-4 py-1 rounded-full text-xs font-semibold bg-purple-100 text-purple-800 ">Webinar</span>
+          <span className="px-4 py-1 rounded-full text-xs font-semibold border border-blue-200 text-blue-700 bg-blue-50  ">Upcoming</span>
         </div>
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Axto X Clive Loseby ( TED Speaker)</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Axto X Clive Loseby ( TED Speaker)</h1>
         {/* Description */}
-        <p className="text-gray-800 dark:text-gray-200 mb-2 text-lg ">
+        <p className="text-gray-800  mb-2 text-lg ">
           The European Accessibility Act (EAA) is coming into force - but digital compliance isn't just about ticking checkboxes. It's about real people, real users, and real inclusion.
         </p>
-        <p className="text-gray-800 dark:text-gray-200 mb-2 text-lg ">
+        <p className="text-gray-800  mb-2 text-lg ">
         Join TEDx speaker Clive Loseby, Axto.ai experts, and legal consultants as we dive into:
           
         </p>
-        <ul className="list-disc pl-6 mt-2 text-gray-800 dark:text-gray-200 mb-6 text-lg ">
+        <ul className="list-disc pl-6 mt-2 text-gray-800  mb-6 text-lg ">
             <li>What EAA means for your website or platform</li>
             <li>Common violations you may not know about</li>
             <li>Why testing with people with disabilities matters</li>
@@ -38,25 +38,25 @@ const Webinar = () => {
           </ul>
         {/* Event Info Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-          <div className="flex items-center gap-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg px-3 py-3">
-            <Calendar className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+          <div className="flex items-center gap-3 bg-blue-50  rounded-lg px-3 py-3">
+            <Calendar className="w-5 h-5 text-blue-600 " />
             <div>
-              <div className="text-xs text-gray-700 dark:text-gray-300">Date</div>
-              <div className="font-medium text-gray-900 dark:text-white">June 27, 2025</div>
+              <div className="text-xs text-gray-700 ">Date</div>
+              <div className="font-medium text-gray-900 ">June 27, 2025</div>
             </div>
           </div>
-          <div className="flex items-center gap-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg px-3 py-3">
-            <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+          <div className="flex items-center gap-3 bg-blue-50  rounded-lg px-3 py-3">
+            <Clock className="w-5 h-5 text-blue-600 " />
             <div>
-              <div className="text-xs text-gray-700 dark:text-gray-300">Time & Duration</div>
-              <div className="font-medium text-gray-900 dark:text-white">3 PM BST</div>
+              <div className="text-xs text-gray-700 ">Time & Duration</div>
+              <div className="font-medium text-gray-900 ">3 PM BST</div>
             </div>
           </div>
-          <div className="flex items-center gap-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg px-3 py-3">
-            <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+          <div className="flex items-center gap-3 bg-blue-50  rounded-lg px-3 py-3">
+            <MapPin className="w-5 h-5 text-blue-600 " />
             <div>
-              <div className="text-xs text-gray-700 dark:text-gray-300">Location</div>
-              <div className="font-medium text-gray-900 dark:text-white">Virtual Event</div>
+              <div className="text-xs text-gray-700 ">Location</div>
+              <div className="font-medium text-gray-900 ">Virtual Event</div>
             </div>
           </div>
           
@@ -91,22 +91,22 @@ const Webinar = () => {
         
       </div>
       {/* Right: Speaker Card */}
-      <div className="w-full lg:w-96 flex-shrink-0 bg-blue-50 dark:bg-blue-900/20 rounded-2xl py-3 px-4 flex flex-col items-center shadow-md border border-blue-100 dark:border-blue-800">
-        <div className="text-base font-semibold text-gray-900 dark:text-white mb-2">Featured Speaker</div>
+      <div className="w-full lg:w-96 flex-shrink-0 bg-blue-50  rounded-2xl py-3 px-4 flex flex-col items-center shadow-md border border-blue-100 ">
+        <div className="text-base font-semibold text-gray-900  mb-2">Featured Speaker</div>
         <div className="relative mb-2 w-full h-48">
           <Image src="/speaker.webp" alt="Image" fill className="rounded-xl object-cover border border-white shadow-lg" />
           {/* <span className="absolute bottom-2 right-2 w-4 h-4 bg-green-400 border-2 border-white rounded-full"></span> */}
         </div>
-        <div className="text-xl font-bold text-gray-900 dark:text-white">Clive Loseby</div>
+        <div className="text-xl font-bold text-gray-900 ">Clive Loseby</div>
         
       
         <div className="flex flex-wrap gap-2 mb-3 mt-2">
-          <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200">Founder of Access by Design</span>
-          <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200">TEDx Speaker</span>
-          <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200">Digital Accessibility Advocate</span>
-          <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200">Global Leader in Website Accessibility</span>
+          <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 ">Founder of Access by Design</span>
+          <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">TEDx Speaker</span>
+          <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 ">Digital Accessibility Advocate</span>
+          <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">Global Leader in Website Accessibility</span>
         </div>
-        <div className="text-gray-800 dark:text-gray-200 text-[12px] mb-2 text-center">
+        <div className="text-gray-800  text-[12px] mb-2 text-center">
      Clive Loseby is a leading accessibility advocate and TEDx speaker with nearly 20 years of experience. He founded Access by Design to make the web inclusive for all, supported by a team of disabled auditors. Clive launched the world's first fully accessible, mobile-friendly website in 2011 and continues to support organizations through consulting, training, and awareness.
         </div>
       <div className="flex  items-center gap-5 mt-auto ">
@@ -114,7 +114,7 @@ const Webinar = () => {
         href="https://www.linkedin.com/in/cliveloseby/"
         target="_blank"
         aria-label="Clive Loseby's LinkedIn Profile"
-        className="flex items-center gap-2 text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+        className="flex items-center gap-2 text-blue-300 hover:text-blue-600  transition-colors"
       >
         <Linkedin className="w-5 h-5" />
         {/* <span className="text-sm font-medium underline"></span> */}
@@ -123,7 +123,7 @@ const Webinar = () => {
         href="https://x.com/abd_clive"
         target="_blank"
         aria-label="Clive Loseby's Twitter Profile"
-        className="flex items-center gap-2 text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+        className="flex items-center gap-2 text-blue-300 hover:text-blue-600  transition-colors"
       >
         <Twitter className="w-5 h-5" />
         {/* <span className="text-sm font-medium underline">Clive Loseby</span> */}

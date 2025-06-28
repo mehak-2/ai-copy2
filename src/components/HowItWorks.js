@@ -185,7 +185,7 @@ const HowItWorks = () => {
     }
 
     return ( 
-        <section ref={ref} className="py-24 bg-white dark:bg-gray-900" id="how-it-works">
+        <section ref={ref} className="py-24 bg-white" id="how-it-works">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     variants={containerVariants}
@@ -195,13 +195,13 @@ const HowItWorks = () => {
                 >
                     <motion.h2
                         variants={itemVariants}
-                        className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+                        className="text-3xl md:text-4xl font-bold text-gray-900  mb-4"
                     >
                         How it works?
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
-                        className="text-lg text-gray-800 dark:text-gray-200 max-w-2xl mx-auto"
+                        className="text-lg text-gray-800  max-w-2xl mx-auto"
                     >
                         Get comprehensive website analysis in three simple steps
                     </motion.p>
@@ -226,20 +226,20 @@ const HowItWorks = () => {
                                     >
                                         <div className="flex items-center gap-4">
                                             <motion.div
-                                                className="flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-lg"
+                                                className="flex items-center justify-center w-10 h-10 bg-blue-600  text-white rounded-lg"
                                             >
                                                 {step.icon}
                                             </motion.div>
-                                            <span className="text-sm font-medium text-blue-600 dark:text-blue-400 tracking-wider">
+                                            <span className="text-sm font-medium text-blue-600  tracking-wider">
                                                 STEP {step.number}
                                             </span>
                                         </div>
 
-                                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+                                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 ">
                                             {step.title}
                                         </h3>
 
-                                        <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
+                                        <p className="text-lg text-gray-800  leading-relaxed">
                                             {step.description}
                                         </p>
                                     </motion.div>
@@ -250,18 +250,18 @@ const HowItWorks = () => {
                                     >
                                         <div className="relative">
                                             <motion.div
-                                                className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 border border-gray-300 dark:border-gray-600"
+                                                className="bg-gray-50  rounded-2xl p-8 border border-gray-300 "
                                             >
                                                 {/* Step 1: Looping URL Animation */}
                                                 {index === 0 && (
                                                     <div className="space-y-4">
-                                                        <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-300 dark:border-gray-600 relative overflow-hidden">
+                                                        <div className="flex items-center gap-3 p-4 bg-white  rounded-xl border border-gray-300  relative overflow-hidden">
                                                             <Search className="w-5 h-5 text-gray-700" />
                                                             <div className="flex-1 relative">
                                                                 <AnimatePresence mode="wait">
                                                                     <motion.span
                                                                         key={animationCycle} // Force re-render on cycle
-                                                                        className="text-gray-800 dark:text-gray-200"
+                                                                        className="text-gray-800 "
                                                                         initial={{ opacity: 0 }}
                                                                         animate={{ opacity: typedText ? 1 : 0 }}
                                                                         exit={{ opacity: 0 }}
@@ -336,14 +336,14 @@ const HowItWorks = () => {
                                                     <div className="space-y-4">
                                                         <div className="flex items-center justify-between">
                                                             <motion.span
-                                                                className="text-sm font-medium text-gray-800 dark:text-gray-200"
+                                                                className="text-sm font-medium text-gray-800 "
                                                                 animate={isAnalyzing ? { opacity: [1, 0.7, 1] } : {}}
                                                                 transition={{ duration: 1.5, repeat: Infinity }}
                                                             >
                                                                 {isAnalyzing ? 'Analyzing...' : 'Analysis Complete'}
                                                             </motion.span>
                                                             <motion.span
-                                                                className="text-sm text-blue-600 dark:text-blue-400 font-mono"
+                                                                className="text-sm text-blue-600  font-mono"
                                                                 key={`progress-${Math.floor(analysisProgress)}-${animationCycle}`}
                                                             >
                                                                 {Math.floor(analysisProgress)}%
@@ -352,7 +352,7 @@ const HowItWorks = () => {
 
                                                         <div className="space-y-3">
                                                             {/* Animated Progress Bar */}
-                                                            <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                                                            <div className="h-2 bg-gray-200  rounded-full overflow-hidden">
                                                                 <motion.div
                                                                     className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
                                                                     initial={{ width: "0%" }}
@@ -367,8 +367,8 @@ const HowItWorks = () => {
                                                                     <motion.div
                                                                         key={`${check}-${animationCycle}`}
                                                                         className={`flex items-center gap-2 p-2 rounded-lg transition-colors ${completedChecks.includes(check)
-                                                                            ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400'
-                                                                            : 'bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300'
+                                                                            ? 'bg-green-50  text-green-700 '
+                                                                            : 'bg-gray-100  text-gray-700 '
                                                                             }`}
                                                                         initial={{ scale: 0.9, opacity: 0.5 }}
                                                                         animate={{
@@ -417,7 +417,7 @@ const HowItWorks = () => {
                                                             {showReport ? (
                                                                 <>
                                                                     <motion.div
-                                                                        className="flex items-center justify-between p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-300 dark:border-gray-600"
+                                                                        className="flex items-center justify-between p-4 bg-white  rounded-xl border border-gray-300 "
                                                                         initial={{ scale: 0.95, opacity: 0 }}
                                                                         animate={{ scale: 1, opacity: 1 }}
                                                                         transition={{ delay: 0.1, duration: 0.4 }}
@@ -431,8 +431,8 @@ const HowItWorks = () => {
                                                                                 <FileCheck className="w-5 h-5 text-green-500" />
                                                                             </motion.div>
                                                                             <div>
-                                                                                <div className="font-medium text-gray-900 dark:text-white">Website Report</div>
-                                                                                <div className="text-sm text-gray-700 dark:text-gray-300">PDF • 2.4 MB</div>
+                                                                                <div className="font-medium text-gray-900 ">Website Report</div>
+                                                                                <div className="text-sm text-gray-700 ">PDF • 2.4 MB</div>
                                                                             </div>
                                                                         </div>
                                                                         <motion.button
@@ -458,41 +458,41 @@ const HowItWorks = () => {
                                                                         ].map((item, i) => (
                                                                             <motion.div
                                                                                 key={`${item.label}-${animationCycle}`}
-                                                                                className={`text-center p-2 bg-${item.color}-50 dark:bg-${item.color}-900/20 rounded-lg`}
+                                                                                className={`text-center p-2 bg-${item.color}-50  rounded-lg`}
                                                                                 initial={{ scale: 0.8, opacity: 0 }}
                                                                                 animate={{ scale: 1, opacity: 1 }}
                                                                                 transition={{ delay: 0.8 + i * 0.1, type: "spring", duration: 0.5 }}
                                                                             >
                                                                                 <motion.div
-                                                                                    className={`font-bold text-${item.color}-600 dark:text-${item.color}-400`}
+                                                                                    className={`font-bold text-${item.color}-600 `}
                                                                                     initial={{ scale: 0 }}
                                                                                     animate={{ scale: 1 }}
                                                                                     transition={{ delay: 1 + i * 0.1, type: "spring", stiffness: 400, duration: 0.5 }}
                                                                                 >
                                                                                     {item.score}
                                                                                 </motion.div>
-                                                                                <div className="text-gray-800 dark:text-gray-200">{item.label}</div>
+                                                                                <div className="text-gray-800 ">{item.label}</div>
                                                                             </motion.div>
                                                                         ))}
                                                                     </motion.div>
                                                                 </>
                                                             ) : (
                                                                 <div className="space-y-4 opacity-50">
-                                                                    <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-300 dark:border-gray-600">
+                                                                    <div className="flex items-center justify-between p-4 bg-white  rounded-xl border border-gray-300 ">
                                                                         <div className="flex items-center gap-3">
-                                                                            <div className="w-5 h-5 bg-gray-300 dark:bg-gray-600 rounded"></div>
+                                                                            <div className="w-5 h-5 bg-gray-300  rounded"></div>
                                                                             <div>
-                                                                                <div className="w-24 h-4 bg-gray-300 dark:bg-gray-600 rounded mb-1"></div>
-                                                                                <div className="w-16 h-3 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                                                                                <div className="w-24 h-4 bg-gray-300  rounded mb-1"></div>
+                                                                                <div className="w-16 h-3 bg-gray-200 rounded"></div>
                                                                             </div>
                                                                         </div>
-                                                                        <div className="w-16 h-8 bg-gray-300 dark:bg-gray-600 rounded"></div>
+                                                                        <div className="w-16 h-8 bg-gray-300 rounded"></div>
                                                                     </div>
                                                                     <div className="grid grid-cols-3 gap-2">
                                                                         {[1, 2, 3].map(i => (
-                                                                            <div key={i} className="text-center p-2 bg-gray-100 dark:bg-gray-900 rounded-lg">
-                                                                                <div className="w-8 h-6 bg-gray-300 dark:bg-gray-600 rounded mx-auto mb-1"></div>
-                                                                                <div className="w-12 h-3 bg-gray-200 dark:bg-gray-700 rounded mx-auto"></div>
+                                                                            <div key={i} className="text-center p-2 bg-gray-100  rounded-lg">
+                                                                                <div className="w-8 h-6 bg-gray-300 rounded mx-auto mb-1"></div>
+                                                                                <div className="w-12 h-3 bg-gray-200 rounded mx-auto"></div>
                                                                             </div>
                                                                         ))}
                                                                     </div>
@@ -518,7 +518,7 @@ const HowItWorks = () => {
                     >
                         <Link
                             href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`}
-                            className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+                            className="group relative inline-flex items-center justify-center gap-3 bg-[#444CE7] text-white font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden"
                         >
                             <Target className="w-5 h-5 relative z-20" />
                             <span className="relative z-20">Start Free Audit</span>

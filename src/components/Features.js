@@ -12,7 +12,7 @@ import {
 const Features = () => {
   return (
     
-    <div className="py-8 px-4 sm:py-16 sm:px-8 lg:py-24 lg:px-32">
+    <div className="py-8 px-4 sm:py-16 sm:px-8 lg:py-24 lg:px-32 bg-white">
             <div className='flex flex-row justify-center gap-8 '>
             <div>
                     <p className="rounded-full border border-[#444CE7] px-6 py-1 md:px-7 md:py-2 text-[#444CE7] text-base sm:text-2xl md:text-4xl">100K +</p>
@@ -28,9 +28,9 @@ const Features = () => {
     <Target className="w-8 h-8 text-[#444CE7] mb-2 " />
     <div className='flex flex-row gap-3'>
         <div>
-    <h2 className="text-lg font-semibold text-[#0A0D12]  dark:text-gray-100 mb-1 tracking-wide">Detect</h2>
+    <h2 className="text-lg font-semibold text-[#0A0D12]   mb-1 tracking-wide">Detect</h2>
     </div>
-    <div className=" font-bold  dark:text-purple-200 transition-transform duration-300 group-hover:scale-110 text-[#0A0D12] text-2xl">24/7</div>
+    <div className=" font-bold   transition-transform duration-300 group-hover:scale-110 text-[#0A0D12] text-2xl">24/7</div>
     </div>
   </div>
 
@@ -40,9 +40,9 @@ const Features = () => {
     <ArrowRight className="w-8 h-8 text-[#444CE7] mb-2" />
     <div className='flex flex-row gap-3'>
         <div>
-    <h2 className="text-lg font-semibold text-[#0A0D12]  dark:text-gray-100 mb-1 tracking-wide">Experts</h2>
+    <h2 className="text-lg font-semibold text-[#0A0D12]   mb-1 tracking-wide">Experts</h2>
    </div>
-   <div className=" font-bold  dark:text-purple-200 transition-transform duration-300 group-hover:scale-110 text-[#0A0D12] text-2xl">200+</div>
+   <div className=" font-bold   transition-transform duration-300 group-hover:scale-110 text-[#0A0D12] text-2xl">200+</div>
     </div>
   </div>
 
@@ -51,9 +51,9 @@ const Features = () => {
     <TrendingUp className="w-8 h-8 text-[#444CE7] mb-2 " />
     <div className='flex flex-row gap-3'>
         <div>
-        <h2 className="text-lg font-semibold text-[#0A0D12]  dark:text-gray-100 mb-1 tracking-wide">Solution</h2>
+        <h2 className="text-lg font-semibold text-[#0A0D12]   mb-1 tracking-wide">Solution</h2>
    </div>
-   <div className=" font-bold  dark:text-purple-200 transition-transform duration-300 group-hover:scale-110 text-[#0A0D12] text-2xl">100%</div>
+   <div className=" font-bold   transition-transform duration-300 group-hover:scale-110 text-[#0A0D12] text-2xl">100%</div>
   </div>
 </div>
 </div>

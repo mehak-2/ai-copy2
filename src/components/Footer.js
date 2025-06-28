@@ -56,7 +56,7 @@ export default function Footer() {
                             </div>
                             <span className="text-[25px] font-bold text-white">axto.ai</span>
                         </Link>
-                        <p className="text-gray-400 dark:text-gray-300 mb-6 max-w-md">
+                        <p className="text-gray-400  mb-6 max-w-md">
                             Transform your website into an EAA-compliant digital asset. Get your free scan now.
                         </p>
                         <div className="flex space-x-4">
@@ -64,7 +64,7 @@ export default function Footer() {
                                 <a
                                     key={social.name}
                                     href={social.href}
-                                    className="text-gray-400 dark:text-gray-300 hover:text-white transition-colors duration-200"
+                                    className="text-gray-400  hover:text-white transition-colors duration-200"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -84,7 +84,7 @@ export default function Footer() {
                                     <li key={link.name}>
                                         <Link
                                             href={link.href}
-                                            className="text-gray-400 dark:text-gray-300 hover:text-white transition-colors duration-200"
+                                            className="text-gray-400  hover:text-white transition-colors duration-200"
                                         >
                                             {link.name}
                                         </Link>
@@ -95,8 +95,8 @@ export default function Footer() {
                     ))}
                 </div>
 
-                <div className="border-t border-gray-800 dark:border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                    <p className="text-gray-400 dark:text-gray-300 text-sm">
+                <div className="border-t border-gray-800  mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p className="text-gray-400  text-sm">
                         © {new Date().getFullYear()} axto.ai. All rights reserved.
                     </p>
                     <div className="flex space-x-6 mt-4 md:mt-0">
