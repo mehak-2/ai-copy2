@@ -108,7 +108,7 @@ const RegisterPopup = () => {
                     <label className="block text-sm font-medium mb-2 text-gray-700 transition-colors">Email</label>
                     <input
                       type="email"
-                      className={`form-input pr-10 bg-white ${isEmailValid && emailTouched ? 'border-green-400 ' : ''}`}
+                      className={`form-input pr-10 ${isEmailValid && emailTouched ? 'border-green-400 ' : ''}`}
                       value={email}
                       onChange={e => { setEmail(e.target.value); setEmailTouched(true); }}
                       onBlur={() => setEmailTouched(true)}
@@ -133,13 +133,13 @@ const RegisterPopup = () => {
                     <label className="block text-sm font-medium mb-2 text-gray-700 transition-colors">Phone Number</label>
                     <input
                       type="tel"
-                      className="form-input bg-white"
+                      className="form-input"
                       value={number}
                       onChange={e => setNumber(e.target.value)}
                       required
                     />
                   </div>
-                  {error && <div className="text-red-500  text-sm text-center  transition-colors">{error}</div>}
+                  {error && <div className="text-red-500  text-sm text-center transition-colors">{error}</div>}
                   <button
                     type="submit"
                     className="w-full py-3 rounded-lg font-bold text-white bg-[#444CE7] hover:from-primary-700 hover:via-purple-700 hover:to-pink-600  shadow-lg transition-all duration-200 disabled:opacity-50"
