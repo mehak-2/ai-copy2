@@ -25,13 +25,13 @@ const FreeCreditsPopup = () => {
   }
 
   return (
-    <div className={`fixed bottom-4 left-4 right-4 sm:right-auto sm:left-5 sm:bottom-5 bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg z-50 max-w-full sm:max-w-sm  ${( !user) ? "opacity-100" : "opacity-0 display-none"} `}>
+    <div className={`fixed bottom-4 left-4 right-4 sm:right-auto sm:left-5 sm:bottom-5 bg-white  p-4 sm:p-6 rounded-lg shadow-lg z-50 max-w-full sm:max-w-sm  ${( !user) ? "opacity-100" : "opacity-0 display-none"} `}>
       <div className="flex items-start">
         <div className="flex-shrink-0">
           <Image src="/logo.png" alt="Logo" width={32} height={32} />
         </div>
         <div className="ml-3 sm:ml-4 flex-grow">
-          <h3 className="font-bold text-xs sm:text-base text-gray-900 dark:text-white">Join now and get 1 month of credits - completely free</h3>
+          <h3 className="font-bold text-xs sm:text-base text-gray-900 ">Join now and get 1 month of credits - completely free</h3>
          
      
             <Link
