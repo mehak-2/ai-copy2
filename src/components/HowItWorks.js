@@ -226,11 +226,11 @@ const HowItWorks = () => {
                                     >
                                         <div className="flex items-center gap-4">
                                             <motion.div
-                                                className="flex items-center justify-center w-10 h-10 bg-blue-600  text-white rounded-lg"
+                                                className="flex items-center justify-center w-10 h-10 bg-[#444CE7]  text-white rounded-lg"
                                             >
                                                 {step.icon}
                                             </motion.div>
-                                            <span className="text-sm font-medium text-blue-600  tracking-wider">
+                                            <span className="text-sm font-medium text-[#444CE7]  tracking-wider">
                                                 STEP {step.number}
                                             </span>
                                         </div>
@@ -271,7 +271,7 @@ const HowItWorks = () => {
                                                                     </motion.span>
                                                                 </AnimatePresence>
                                                                 <motion.div
-                                                                    className="absolute top-0 w-0.5 h-5 bg-blue-500"
+                                                                    className="absolute top-0 w-0.5 h-5 bg-[#444CE7]"
                                                                     animate={{
                                                                         opacity: typedText.length < fullUrl.length ? [1, 0, 1] : 0,
                                                                         left: `${typedText.length * 8.5}px`
@@ -288,12 +288,12 @@ const HowItWorks = () => {
                                                             {showButton && (
                                                                 <motion.button
                                                                     key={`button-${animationCycle}`}
-                                                                    className="w-full py-3 bg-blue-600 text-white rounded-xl font-medium relative overflow-hidden"
+                                                                    className="w-full py-3 bg-[#444CE7] text-white rounded-xl font-medium relative overflow-hidden"
                                                                     initial={{ opacity: 0, y: 20 }}
                                                                     animate={{
                                                                         opacity: 1,
                                                                         y: 0,
-                                                                        backgroundColor: buttonClicked ? "#1d4ed8" : "#2563eb"
+                                                                        backgroundColor: buttonClicked ? "#444CE7" : "#444CE7"
                                                                     }}
                                                                     exit={{ opacity: 0, y: -20 }}
                                                                     transition={{ duration: 0.4 }}
@@ -343,7 +343,7 @@ const HowItWorks = () => {
                                                                 {isAnalyzing ? 'Analyzing...' : 'Analysis Complete'}
                                                             </motion.span>
                                                             <motion.span
-                                                                className="text-sm text-blue-600  font-mono"
+                                                                className="text-sm text-[#444CE7]  font-mono"
                                                                 key={`progress-${Math.floor(analysisProgress)}-${animationCycle}`}
                                                             >
                                                                 {Math.floor(analysisProgress)}%
@@ -354,7 +354,7 @@ const HowItWorks = () => {
                                                             {/* Animated Progress Bar */}
                                                             <div className="h-2 bg-gray-200  rounded-full overflow-hidden">
                                                                 <motion.div
-                                                                    className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
+                                                                    className="h-full bg-gradient-to-r from-[#444CE7] to-[#444CE7] rounded-full"
                                                                     initial={{ width: "0%" }}
                                                                     animate={{ width: `${analysisProgress}%` }}
                                                                     transition={{ duration: 0.3, ease: "easeOut" }}
@@ -436,7 +436,7 @@ const HowItWorks = () => {
                                                                             </div>
                                                                         </div>
                                                                         <motion.button
-                                                                            className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium"
+                                                                            className="px-4 py-2 bg-[#444CE7] text-white rounded-lg text-sm font-medium"
                                                                             initial={{ x: 20, opacity: 0 }}
                                                                             animate={{ x: 0, opacity: 1 }}
                                                                             transition={{ delay: 0.4, duration: 0.4 }}
