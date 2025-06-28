@@ -61,28 +61,28 @@ export default function LeadCaptureForm({ onSuccess }) {
                 <div className="flex flex-col gap-3">
                     {/* Email Input */}
                     <div className="flex-1 relative">
-                        <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 dark:text-gray-300 w-4 h-4" />
+                        <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 w-4 h-4" />
                         <input
                             type="email"
                             name="email"
                             placeholder="user@gmail.com"
                             value={formData.email}
                             onChange={handleInputChange}
-                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-400 dark:border-gray-500 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 dark:focus:border-blue-400 text-gray-900 dark:text-gray-100 placeholder-gray-700 dark:placeholder-gray-400 transition-all duration-200 text-sm font-medium"
+                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-400  bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600  text-gray-900  placeholder-gray-700  transition-all duration-200 text-sm font-medium"
                             disabled={isLoading}
                         />
                     </div>
 
                     {/* Number Input */}
                     <div className="flex-1 relative">
-                        <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 dark:text-gray-300 w-4 h-4" />
+                        <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700  w-4 h-4" />
                         <input
                             type="text"
                             name="number"
                             placeholder="+919762422222"
                             value={formData.number}
                             onChange={handleInputChange}
-                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-400 dark:border-gray-500 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 dark:focus:border-blue-400 text-gray-900 dark:text-gray-100 placeholder-gray-700 dark:placeholder-gray-400 transition-all duration-200 text-sm font-medium"
+                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-400  bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600  text-gray-900  placeholder-gray-700  transition-all duration-200 text-sm font-medium"
                             disabled={isLoading}
                         />
                     </div>
@@ -91,7 +91,7 @@ export default function LeadCaptureForm({ onSuccess }) {
                     <button
                         type="submit"
                         disabled={isLoading}
-                        className="flex-shrink-0 bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 font-medium py-3.5 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px] shadow-sm"
+                        className="flex-shrink-0 bg-gray-900  text-white  hover:bg-gray-800  font-medium py-3.5 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px] shadow-sm"
                     >
                         {isLoading ? (
                             <Loader className="w-4 h-4 animate-spin" />
