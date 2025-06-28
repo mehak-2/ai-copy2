@@ -71,8 +71,7 @@ export default async function Home() {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
             }}>
-               
-
+                <div className="absolute inset-0 bg-black/70 z-0"></div>
                 <div className="relative z-10 container mx-auto pt-20 ">
                     <div className="text-center max-w-4xl ">
                         {/* Badge */}
@@ -207,7 +206,7 @@ export default async function Home() {
     </h2>
     <div className="flex justify-center">
       <div className="relative max-w-7xl w-full rounded-3xl p-1  border border-[#D5D7DA]  ">
-        <div className="relative z-10 flex flex-col items-center text-center rounded-3xl bg-white/70  p-10 md:p-12 ">
+        <div className="relative z-10 flex flex-col items-center text-center rounded-3xl bg-white p-10 md:p-12 ">
          
           {/* Logo */}
           <div className="relative mb-6">
@@ -220,11 +219,12 @@ export default async function Home() {
               priority
             />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900  mb-2 tracking-tight drop-shadow-sm">
+          <h3 className="text-2xl font-bold text-gray-900 mb-2 tracking-tight drop-shadow-sm">
             Maxtron Innovations
           </h3>
-          <p className="text-lg text-gray-700  font-medium mb-0  mx-auto">
-            Transform Your Business and Growth with <span className="bg-[#444CE7] to-pink-600 bg-clip-text text-transparent font-semibold">360° Cutting-Edge Tech Solutions</span>
+          <p className="text-lg text-gray-900 font-medium mb-0 mx-auto">
+            Transform Your Business and Growth with
+            <span className="text-[#444CE7] font-semibold"> 360° Cutting-Edge Tech Solutions</span>
           </p>
         </div>
         {/* Glassmorphism border shine */}

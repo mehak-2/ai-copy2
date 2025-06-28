@@ -61,8 +61,10 @@ export default function LeadCaptureForm({ onSuccess }) {
                 <div className="flex flex-col gap-3">
                     {/* Email Input */}
                     <div className="flex-1 relative">
+                        <label htmlFor="lead-email" className="sr-only">Email address</label>
                         <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 w-4 h-4" />
                         <input
+                            id="lead-email"
                             type="email"
                             name="email"
                             placeholder="user@gmail.com"
@@ -75,8 +77,10 @@ export default function LeadCaptureForm({ onSuccess }) {
 
                     {/* Number Input */}
                     <div className="flex-1 relative">
+                        <label htmlFor="lead-number" className="sr-only">Phone number</label>
                         <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700  w-4 h-4" />
                         <input
+                            id="lead-number"
                             type="text"
                             name="number"
                             placeholder="+919762422222"
