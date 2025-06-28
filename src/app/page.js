@@ -148,6 +148,54 @@ export default async function Home() {
               </div>
             </section>
 
+            <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50" id="blog">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <div className="inline-flex items-center gap-2 bg-primary-100 rounded-full px-4 py-2 mb-6">
+                            <FileText className="w-4 h-4 text-primary-700" />
+                            <span className="text-sm font-medium text-[#1a1a1a]">Latest Insights</span>
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Expert Web Optimization Tips
+                        </h2>
+                        <p className="text-xl text-gray-900 max-w-2xl mx-auto">
+                            Stay ahead with the latest accessibility insights, compliance tips, and web optimization strategies
+                        </p>
+                    </div>
+                    {latestBlogs.length > 0 ? (
+                        <>
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                                {latestBlogs.map((blog) => (
+                                    <BlogCardHome key={blog._id || blog.id} blog={blog} />
+                                ))}
+                            </div>
+                            <div className="text-center mt-16">
+                                <Link href="/blog" className="group relative inline-flex items-center justify-center gap-3 bg-[#444CE7] text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
+                                    <FileText className="w-5 h-5" />
+                                    <span>Explore All Articles</span>
+                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                                </Link>
+                            </div>
+                        </>
+                    ) : (
+                        <div className="text-center py-12">
+                            <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <FileText className="w-8 h-8 text-primary-700" />
+                            </div>
+                            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                                New Articles Coming Soon
+                            </h3>
+                            <p className="text-gray-900 max-w-md mx-auto mb-8">
+                                We're preparing expert insights on web accessibility and EU compliance. Check back soon for the latest updates.
+                            </p>
+                            <Link href="/blog" className="btn-primary group">
+                                Visit Blog <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                            </Link>
+                        </div>
+                    )}
+                </div>
+            </section>
+
             {/* Additional Sections Below */}
             {/* ... */}
             <LeadCaptureSection />

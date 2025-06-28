@@ -63,61 +63,68 @@ export default function LeadCaptureForm({ onSuccess }) {
 
     return (
         <div className="w-full">
-            <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="flex flex-col gap-3">
-                    {/* Email Input */}
-                    <div className="flex-1 relative">
-                        <label htmlFor="lead-email" className="sr-only">Email address</label>
-                        <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 w-4 h-4" />
-                        <input
-                            id="lead-email"
-                            type="email"
-                            name="email"
-                            placeholder="user@gmail.com"
-                            // FIX 1: Removed redundant aria-label. The <label> is correctly associated.
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            required // Add required for native browser validation
-                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-400 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 text-gray-900 placeholder-gray-700 transition-all duration-200 text-sm font-medium"
-                            disabled={isLoading}
-                        />
-                    </div>
+          <form onSubmit={handleSubmit} className="space-y-4">
+  <div className="flex flex-col gap-3">
+    {/* Email Input */}
+    <div className="flex-1">
+      <label htmlFor="lead-email" className="block text-sm font-medium text-gray-900 mb-1">
+        Email Address
+      </label>
+      <div className="relative">
+        <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 w-4 h-4" />
+        <input
+          id="lead-email"
+          type="email"
+          name="email"
+          placeholder="user@gmail.com"
+          value={formData.email}
+          onChange={handleInputChange}
+          required
+          className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-400 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 text-gray-900 placeholder-gray-500 transition-all duration-200 text-sm font-medium"
+          disabled={isLoading}
+        />
+      </div>
+    </div>
 
-                    {/* Number Input */}
-                    <div className="flex-1 relative">
-                        <label htmlFor="lead-number" className="sr-only">Phone number</label>
-                        <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 w-4 h-4" />
-                        <input
-                            id="lead-number"
-                            type="tel" // FIX 2: Changed type to "tel" for better semantics and mobile UX
-                            name="number"
-                            placeholder="+919762422222"
-                            // FIX 1: Removed redundant aria-label. The <label> is correctly associated.
-                            value={formData.number}
-                            onChange={handleInputChange}
-                            required // Add required for native browser validation
-                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-400 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 text-gray-900 placeholder-gray-700 transition-all duration-200 text-sm font-medium"
-                            disabled={isLoading}
-                        />
-                    </div>
+    {/* Phone Number Input */}
+    <div className="flex-1">
+      <label htmlFor="lead-number" className="block text-sm font-medium text-gray-900 mb-1">
+        Phone Number
+      </label>
+      <div className="relative">
+        <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 w-4 h-4" />
+        <input
+          id="lead-number"
+          type="tel"
+          name="number"
+          placeholder="+91 97624 22222"
+          value={formData.number}
+          onChange={handleInputChange}
+          required
+          className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-400 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 text-gray-900 placeholder-gray-500 transition-all duration-200 text-sm font-medium"
+          disabled={isLoading}
+        />
+      </div>
+    </div>
 
-                    {/* Submit Button */}
-                    <button
-                        type="submit"
-                        disabled={isLoading}
-                        className="flex-shrink-0 bg-gray-900 text-white hover:bg-gray-800 font-medium py-3.5 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px] shadow-sm"
-                    >
-                        {isLoading ? (
-                            <Loader className="w-4 h-4 animate-spin" />
-                        ) : (
-                            <>
-                                <span className="text-sm">Send</span>
-                                <Send className="w-4 h-4" />
-                            </>
-                        )}
-                    </button>
-                </div>
-            </form>
+    {/* Submit Button */}
+    <button
+      type="submit"
+      disabled={isLoading}
+      className="flex-shrink-0 bg-gray-900 text-white hover:bg-gray-800 font-medium py-3.5 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px] shadow-sm"
+    >
+      {isLoading ? (
+        <Loader className="w-4 h-4 animate-spin" />
+      ) : (
+        <>
+          <span className="text-sm">Send</span>
+          <Send className="w-4 h-4" />
+        </>
+      )}
+    </button>
+  </div>
+</form>
+
         </div>
     )
 }
