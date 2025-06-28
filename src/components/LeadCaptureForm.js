@@ -63,7 +63,7 @@ export default function LeadCaptureForm({ onSuccess }) {
 
     return (
         <div className="w-full">
-          <form onSubmit={handleSubmit} className="space-y-4">
+       <form onSubmit={handleSubmit} className="space-y-4">
   <div className="flex flex-col gap-3">
     {/* Email Input */}
     <div className="flex-1">
@@ -111,7 +111,7 @@ export default function LeadCaptureForm({ onSuccess }) {
     <button
       type="submit"
       disabled={isLoading}
-      className="flex-shrink-0 bg-gray-900 text-white hover:bg-gray-800 font-medium py-3.5 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px] shadow-sm"
+      className="bg-[#22223b] text-white hover:bg-[#1a1a2e] font-medium py-3.5 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px] shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
     >
       {isLoading ? (
         <Loader className="w-4 h-4 animate-spin" />
