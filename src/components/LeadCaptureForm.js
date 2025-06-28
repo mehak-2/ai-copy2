@@ -4,18 +4,7 @@ import { useState } from 'react'
 import { Mail, Phone, Send, Loader } from 'lucide-react'
 import { useCta } from '../contexts/CtaContext'
 
-// HELPER: Make sure this utility class exists in your global CSS file (e.g., globals.css)
-// .sr-only {
-//   position: absolute;
-//   width: 1px;
-//   height: 1px;
-//   padding: 0;
-//   margin: -1px;
-//   overflow: hidden;
-//   clip: rect(0, 0, 0, 0);
-//   white-space: nowrap;
-//   border-width: 0;
-// }
+
 
 export default function LeadCaptureForm({ onSuccess }) {
     const [formData, setFormData] = useState({
@@ -67,9 +56,13 @@ export default function LeadCaptureForm({ onSuccess }) {
   <div className="flex flex-col gap-3">
     {/* Email Input */}
     <div className="flex-1">
-      <label htmlFor="lead-email" className="block text-sm font-medium text-gray-900 mb-1">
-        Email Address
-      </label>
+    <label 
+  htmlFor="lead-email" 
+  className="block text-sm font-medium text-gray-900 mb-1 text-left"
+>
+  Email Address
+</label>
+
       <div className="relative">
         <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 w-4 h-4" />
         <input
@@ -88,7 +81,7 @@ export default function LeadCaptureForm({ onSuccess }) {
 
     {/* Phone Number Input */}
     <div className="flex-1">
-      <label htmlFor="lead-number" className="block text-sm font-medium text-gray-900 mb-1">
+      <label htmlFor="lead-number" className="block text-sm font-medium text-gray-900 mb-1 text-left">
         Phone Number
       </label>
       <div className="relative">
@@ -111,7 +104,7 @@ export default function LeadCaptureForm({ onSuccess }) {
     <button
       type="submit"
       disabled={isLoading}
-      className="bg-[#22223b] text-white hover:bg-[#1a1a2e] font-medium py-3.5 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px] shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+      className="bg-[#0A0D12] text-white hover:bg-[#1a1a2e] font-medium py-3.5 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px] shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
     >
       {isLoading ? (
         <Loader className="w-4 h-4 animate-spin" />

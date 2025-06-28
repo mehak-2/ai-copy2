@@ -36,7 +36,7 @@ const FreeCreditsPopup = () => {
      
             <Link
               href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`}
-              className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.0] transition-all duration-300 mt-2 overflow-hidden text-xs sm:text-sm"
+              className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#444CE7] hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.0] transition-all duration-300 mt-2 overflow-hidden text-xs sm:text-sm"
             >
               <span className="relative z-20">Start Audit</span>
               <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300 relative z-20" />

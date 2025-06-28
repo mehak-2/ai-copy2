@@ -60,20 +60,20 @@ const RegisterPopup = () => {
           exit={{ opacity: 0, x: '100vw', scale: 0.95, transition: { duration: 0.4, ease: [0.55, 0.06, 0.68, 0.19] } }}
         >
           <motion.div
-            className="bg-gradient-to-br from-primary-50 via-white to-primary-100 dark:from-gray-900 dark:via-gray-950 dark:to-primary-950 rounded-2xl shadow-2xl p-8 w-full max-w-md relative border border-primary-100 dark:border-primary-900 transition-colors duration-200"
+            className="bg-white  rounded-2xl shadow-2xl p-8 w-full max-w-md relative border border-primary-100  transition-colors duration-200"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 40, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
             <button
-              className="absolute top-3 right-3 text-gray-400 dark:text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 text-2xl transition-colors duration-200"
+              className="absolute top-3 right-3 text-gray-400  hover:text-primary-600  text-2xl transition-colors duration-200"
               onClick={handleClose}
               aria-label="Close"
             >
               &times;
             </button>
-            <h2 className="text-2xl font-extrabold mb-6 text-center bg-gradient-to-r from-primary-600 via-purple-600 to-pink-500 bg-clip-text text-transparent dark:from-primary-400 dark:via-purple-400 dark:to-pink-400 transition-colors">Register for Updates</h2>
+            <h2 className="text-2xl font-extrabold mb-6 text-center bg-[#444CE7] from-primary-600 via-purple-600 to-pink-500 bg-clip-text text-transparent   transition-colors">Register for Updates</h2>
             <AnimatePresence mode="wait">
               {success ? (
                 <motion.div
@@ -88,11 +88,11 @@ const RegisterPopup = () => {
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.1, type: 'spring', stiffness: 300, damping: 25 }}
-                    className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-green-200 via-green-100 to-primary-100 dark:from-green-900 dark:via-primary-900 dark:to-primary-950 rounded-2xl mb-4 shadow-lg transition-colors"
+                    className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-green-200 via-green-100 to-primary-100  rounded-2xl mb-4 shadow-lg transition-colors"
                   >
-                    <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400 transition-colors" />
+                    <CheckCircle className="w-8 h-8 text-green-600 transition-colors" />
                   </motion.div>
-                  <div className="text-green-600 dark:text-green-400 font-bold text-lg text-center transition-colors">Thank you for registering!</div>
+                  <div className="text-green-600  font-bold text-lg text-center transition-colors">Thank you for registering!</div>
                 </motion.div>
               ) : (
                 <motion.form
@@ -105,10 +105,10 @@ const RegisterPopup = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="relative">
-                    <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300 transition-colors">Email</label>
+                    <label className="block text-sm font-medium mb-2 text-gray-700 transition-colors">Email</label>
                     <input
                       type="email"
-                      className={`form-input pr-10 ${isEmailValid && emailTouched ? 'border-green-400 dark:border-green-500' : ''}`}
+                      className={`form-input pr-10 ${isEmailValid && emailTouched ? 'border-green-400 ' : ''}`}
                       value={email}
                       onChange={e => { setEmail(e.target.value); setEmailTouched(true); }}
                       onBlur={() => setEmailTouched(true)}
@@ -122,7 +122,7 @@ const RegisterPopup = () => {
                           animate={{ scale: 1, opacity: 1 }}
                           exit={{ scale: 0, opacity: 0 }}
                           transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                          className="absolute right-3 top-9 text-green-500 dark:text-green-400 transition-colors"
+                          className="absolute right-3 top-9 text-green-500  transition-colors"
                         >
                           <CheckCircle className="w-5 h-5" />
                         </motion.span>
@@ -130,7 +130,7 @@ const RegisterPopup = () => {
                     </AnimatePresence>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300 transition-colors">Phone Number</label>
+                    <label className="block text-sm font-medium mb-2 text-gray-700 transition-colors">Phone Number</label>
                     <input
                       type="tel"
                       className="form-input"
@@ -139,10 +139,10 @@ const RegisterPopup = () => {
                       required
                     />
                   </div>
-                  {error && <div className="text-red-500 dark:text-red-400 text-sm text-center transition-colors">{error}</div>}
+                  {error && <div className="text-red-500  text-sm text-center transition-colors">{error}</div>}
                   <button
                     type="submit"
-                    className="w-full py-3 rounded-lg font-bold text-white bg-gradient-to-r from-primary-600 via-purple-600 to-pink-500 hover:from-primary-700 hover:via-purple-700 hover:to-pink-600 dark:from-primary-400 dark:via-purple-400 dark:to-pink-400 dark:hover:from-primary-500 dark:hover:via-purple-500 dark:hover:to-pink-500 shadow-lg transition-all duration-200 disabled:opacity-50"
+                    className="w-full py-3 rounded-lg font-bold text-white bg-[#444CE7] hover:from-primary-700 hover:via-purple-700 hover:to-pink-600  shadow-lg transition-all duration-200 disabled:opacity-50"
                     disabled={loading}
                   >
                     {loading ? 'Registering...' : 'Register'}

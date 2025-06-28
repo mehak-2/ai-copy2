@@ -9,6 +9,8 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 
+
+
 const BlogCardHome = dynamic(() => import('@/components/BlogCardHome'));
 const FeaturesSection = dynamic(() => import('@/components/FeaturesSection'));
 const Features = dynamic(() => import('@/components/Features'));
@@ -60,53 +62,76 @@ export default async function Home() {
         <div className="min-h-screen bg-white transition-colors duration-200">
             <Header />
 
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                <Image
-                    src="/header-bg.webp"
-                    alt="Abstract geometric background"
-                    fill
-                    priority
-                    className="object-cover"
-                />
-                <div className="absolute inset-0 bg-black/80 z-0"></div>
-                <div className="relative z-10 container mx-auto pt-20">
-                    <div className="text-center max-w-4xl">
-                        <div className="gap-2 py-2 mb-6 animate-fade-in transition-all duration-300 cursor-default items-start text-left">
-                            <span className="text-sm font-medium text-white">
-                                AI-Powered EAA Scanner
-                            </span>
-                        </div>
-                        <h1 className="text-4xl md:text-5xl lg:text-5xl mb-6 animate-fade-in-up items-start text-left max-w-3xl">
-                            <span className="block text-white font-normal mb-2">
-                                Check if your website is accessible and EAA compliant
-                            </span>
-                            <span className='text-white font-normal italic'>
-                                in seconds
-                            </span>
-                        </h1>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-start animate-fade-in-up animation-delay-400 mb-8 items-start">
-                            <Link
-                                href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`}
-                                className="group relative inline-flex items-center justify-center gap-3 bg-[#444CE7] hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden"
-                            >
-                                <Target className="w-5 h-5 relative z-20" />
-                                <span className="relative z-20">Free EAA Audit</span>
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 relative z-20" />
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700 ease-in-out"></div>
-                                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                            </Link>
+            <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-14">
+           
+            <Image
+                src="/header-bg.webp"
+                alt="Abstract geometric background"
+                fill
+                priority
+                className="object-cover"
+            />
+           
+            <div className="absolute inset-0 z-0"></div>
 
-                            <Link
-                                href="/about"
-                                className="group relative inline-flex items-center justify-center gap-3 backdrop-blur-sm font-semibold px-8 py-4 rounded-xl transform transition-all duration-300 text-white bg-black"
-                            >
-                                <TrendingUp className="w-5 h-5 transition-transform duration-300" />
-                                <span>Get Full Access</span>
-                            </Link>
-                        </div>
+         
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+              
+                <div className="max-w-4xl text-left">
+                  
+                    <div className="gap-2 py-2 mb-4 md:mb-6 animate-fade-in transition-all duration-300 cursor-default items-start text-left">
+                        <span className="text-sm font-medium text-white drop-shadow-sm px-2 py-1 rounded">
+                            AI-Powered EAA Scanner
+                        </span>
+                    </div>
+
+                  
+                    <h1 className="text-4xl sm:text-5xl lg:text-5xl mb-10 md:mb-16 animate-fade-in-up text-left max-w-3xl leading-tight">
+                        <span className="block text-white font-normal mb-4 drop-shadow-md">
+                            Check if your website is
+                        </span>
+                        <span className="block text-white font-normal mb-4 drop-shadow-md">
+                            accessible and EAA compliant
+                        </span>
+                        <span className="text-white font-normal italic drop-shadow-md">
+                            in seconds
+                        </span>
+                    </h1>
+
+                    <div className="flex flex-col sm:flex-row gap-4 justify-start animate-fade-in-up animation-delay-400 mb-8 items-start">
+                       
+                        <Link
+                            href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`}
+                           
+                            className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 bg-[#444CE7] hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+                        >
+                            <Target className="w-5 h-5 relative z-20" />
+                            <span className="relative z-20">Free EAA Audit</span>
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 relative z-20" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700 ease-in-out"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                        </Link>
+
+                        {/* Secondary Button */}
+                        <Link
+  href="/about"
+  className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 bg-[#0A0D12] hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-gray-700 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+>
+  <TrendingUp className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 relative z-20" />
+  <span className="relative z-20">Get Full Access</span>
+  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 relative z-20" />
+
+  
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700 ease-in-out"></div>
+
+  
+  <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-gray-700 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+</Link>
+
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
             <Features />
             <HowItWorks />
@@ -148,7 +173,7 @@ export default async function Home() {
               </div>
             </section>
 
-            <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50" id="blog">
+            <section className="py-20 bg-white" id="blog">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-2 bg-primary-100 rounded-full px-4 py-2 mb-6">

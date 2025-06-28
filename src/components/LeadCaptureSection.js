@@ -82,19 +82,19 @@ const LeadCaptureSection = () => {
 
                         {/* Refined heading */}
                         <motion.h2
-                            variants={itemVariants}
-                            className="text-2xl md:text-3xl lg:text-3xl font-semibold text-gray-900  mb-4 leading-tight tracking-tight"
-                        >
-                           Let's Connect
-                        </motion.h2>
+    variants={itemVariants}
+    className="text-2xl md:text-3xl lg:text-3xl font-semibold text-gray-900 dark:text-white mb-4 leading-tight tracking-tight"
+>
+    Let's Connect
+</motion.h2>
 
-                        {/* Minimal subtitle */}
-                        <motion.p
-                            variants={itemVariants}
-                            className="text-base text-gray-800  mb-12 max-w-4xl mx-auto leading-relaxed font-light"
-                        >
-                        Together, we'll make your website fully accessible and EAA compliant
-                        </motion.p>
+<motion.p
+    variants={itemVariants}
+    className="text-base text-gray-800 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light"
+>
+    Together, we'll make your website fully accessible and EAA compliant
+</motion.p>
+
 
                         {/* Form Container with Layout Animation */}
                         <motion.div

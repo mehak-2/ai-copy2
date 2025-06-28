@@ -198,10 +198,11 @@ const FeaturesSection = () => {
                                                 </div>
 
                                                 {/* Learn more link */}
-                                                <div className="flex items-center text-sm font-medium text-gray-400 group-hover:text-gray-600  transition-colors duration-200">
-                                                    <span>Learn more</span>
-                                                    <ArrowUpRight className="w-4 h-4 ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-                                                </div>
+                                                <div className="flex items-center text-sm font-medium text-gray-700 group-hover:text-gray-900 transition-colors duration-200">
+    <span>Learn more</span>
+    <ArrowUpRight className="w-4 h-4 ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+</div>
+
                                             </motion.div>
                                         </motion.div>
                                     )}

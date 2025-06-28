@@ -3,7 +3,7 @@
 import { Sun } from 'lucide-react'
 
 export default function ThemeToggle({ className = '' }) {
-    // Always use light mode
+ 
     const theme = 'light';
 
     return (
@@ -20,7 +20,7 @@ export default function ThemeToggle({ className = '' }) {
             title="Light mode"
         >
             <div className="relative flex items-center justify-center w-full h-full">
-                {/* Sun icon for light mode */}
+             
                 <Sun className="w-5 h-5 opacity-100 rotate-0 scale-100" />
             </div>
         </div>

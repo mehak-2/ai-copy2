@@ -11,7 +11,7 @@ const Webinar = () => {
   const percentFilled = Math.round((attendees / capacity) * 100);
 
   return (
-    <div className="flex flex-col-reverse mb-4 lg:flex-row gap-8 bg-white  rounded-2xl shadow-xl  max-w-7xl mx-auto px-6 lg:px-8 py-8  mt-4">
+    <div className="flex flex-col-reverse mb-4 lg:flex-row gap-8 bg-white  rounded-2xl  max-w-7xl mx-auto px-6 lg:px-8 py-8  mt-4">
       {/* Left: Event Details */}
       <div className="flex-1 ">
         {/* Badges */}

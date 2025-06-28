@@ -185,7 +185,7 @@ const HowItWorks = () => {
     }
 
     return ( 
-        <section ref={ref} className="py-24 bg-white" id="how-it-works">
+        <section ref={ref} className=" bg-white" id="how-it-works">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     variants={containerVariants}
@@ -518,10 +518,11 @@ const HowItWorks = () => {
                     >
                         <Link
                             href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`}
-                            className="group relative inline-flex items-center justify-center gap-3 bg-[#444CE7] text-white font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+                            className="group relative inline-flex items-center justify-center gap-3 bg-#444CE7] text-white bg-[#444CE7] font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden"
                         >
                             <Target className="w-5 h-5 relative z-20" />
-                            <span className="relative z-20">Start Free Audit</span>
+                           <span className="text-white  drop-shadow-md">Start Free Audit</span>
+
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 relative z-20" />
 
                             {/* Shine effect - Fixed */}
