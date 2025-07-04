@@ -136,7 +136,7 @@ export default async function BlogPostPage({ params }) {
     }) : ''
 
     return (
-        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
+        <main className="min-h-screen bg-white transition-colors duration-200" aria-label="Blog post main content">
             {/* Structured Data JSON-LD */}
             {blog.structuredData && (
                 <script
@@ -149,22 +149,22 @@ export default async function BlogPostPage({ params }) {
 
             <Header />
 
-            <div className="pt-20 mt-28 md:mt-20 lg:mt-20  pb-16">
+            <section className="pt-20 mt-28 md:mt-20 lg:mt-20  pb-16" aria-labelledby="blog-title">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Back to Blog */}
-                    <div className="mb-8">
-                        <Link href="/blog" className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium">
-                            <ArrowLeft className="w-4 h-4 mr-2" />
-                            Back to Blog
+                    <nav className="mb-8" aria-label="Back to blog">
+                        <Link href="/blog" className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">
+                            <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" />
+                            <span>Back to Blog</span>
                         </Link>
-                    </div>
+                    </nav>
 
                     {/* Article Header */}
-                    <article className="max-w-4xl mx-auto">
+                    <article className="max-w-4xl mx-auto" aria-labelledby="blog-title">
                         <header className="mb-12">
                             {/* Featured Image */}
                             {blog.featuredImage?.url && (
-                                <div className="relative aspect-video rounded-xl overflow-hidden mb-8">
+                                <figure className="relative aspect-video rounded-xl overflow-hidden mb-8">
                                     <Image
                                         src={blog.featuredImage.url}
                                         alt={blog.featuredImage.altText || blog.title}
@@ -173,54 +173,57 @@ export default async function BlogPostPage({ params }) {
                                         priority
                                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
                                     />
-                                </div>
+                                    {blog.featuredImage.altText && (
+                                        <figcaption className="sr-only">{blog.featuredImage.altText}</figcaption>
+                                    )}
+                                </figure>
                             )}
 
                             {/* Category */}
                             {blog.category && (
                                 <div className="mb-4">
-                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 capitalize">
+                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 capitalize">
                                         {blog.category}
                                     </span>
                                 </div>
                             )}
 
                             {/* Meta Info */}
-                            <div className="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 mb-6 gap-4">
+                            <div className="flex flex-wrap items-center text-sm text-gray-500 mb-6 gap-4" aria-label="Blog meta information">
                                 <div className="flex items-center">
-                                    <Calendar className="w-4 h-4 mr-2" />
-                                    {formattedDate}
+                                    <Calendar className="w-4 h-4 mr-2" aria-hidden="true" />
+                                    <span>{formattedDate}</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <User className="w-4 h-4 mr-2" />
-                                    {blog.author}
+                                    <User className="w-4 h-4 mr-2" aria-hidden="true" />
+                                    <span>{blog.author}</span>
                                 </div>
                                 {blog.readingTime && (
                                     <div className="flex items-center">
-                                        <Clock className="w-4 h-4 mr-2" />
-                                        {blog.readingTime} min read
+                                        <Clock className="w-4 h-4 mr-2" aria-hidden="true" />
+                                        <span>{blog.readingTime} min read</span>
                                     </div>
                                 )}
                                 {blog.views !== undefined && (
                                     <div className="flex items-center">
-                                        <Eye className="w-4 h-4 mr-2" />
-                                        {blog.views} {blog.views === 1 ? 'view' : 'views'}
+                                        <Eye className="w-4 h-4 mr-2" aria-hidden="true" />
+                                        <span>{blog.views} {blog.views === 1 ? 'view' : 'views'}</span>
                                     </div>
                                 )}
                                 {blog.seo?.schema?.wordCount && (
                                     <div className="flex items-center">
-                                        <span className="mr-2">📝</span>
-                                        {blog.seo.schema.wordCount} words
+                                        <span className="mr-2" aria-hidden="true">📝</span>
+                                        <span>{blog.seo.schema.wordCount} words</span>
                                     </div>
                                 )}
                             </div>
 
                             {/* Tags */}
                             {blog.tags && blog.tags.length > 0 && (
-                                <div className="flex flex-wrap gap-2 mb-6">
+                                <div className="flex flex-wrap gap-2 mb-6" aria-label="Blog tags">
                                     {blog.tags.map((tag, index) => (
-                                        <span key={index} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">
-                                            <Tag className="w-3 h-3 mr-1" />
+                                        <span key={index} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
+                                            <Tag className="w-3 h-3 mr-1" aria-hidden="true" />
                                             {tag}
                                         </span>
                                     ))}
@@ -228,18 +231,18 @@ export default async function BlogPostPage({ params }) {
                             )}
 
                             {/* Title */}
-                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                            <h1 id="blog-title" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                                 {blog.title}
                             </h1>
 
                             {/* Excerpt */}
-                            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                            <p className="text-xl text-gray-600 leading-relaxed">
                                 {blog.excerpt}
                             </p>
 
                             {/* Share Button */}
-                            <div className="flex items-center justify-between border-t border-b border-gray-200 dark:border-gray-700 py-6 mt-8">
-                                <div className="text-sm text-gray-500 dark:text-gray-400">
+                            <div className="flex items-center justify-between border-t border-b border-gray-200 py-6 mt-8">
+                                <div className="text-sm text-gray-500">
                                     Share this article
                                 </div>
                                 <ShareButton
@@ -251,18 +254,18 @@ export default async function BlogPostPage({ params }) {
                         </header>
 
                         {/* Article Content */}
-                        <div className="blog-content prose prose-lg dark:prose-invert max-w-none">
+                        <div className="blog-content prose prose-lg max-w-none" aria-label="Blog article content">
                             {/* Render the main content */}
                             {blog.content && (
                                 <div
-                                    className="text-gray-700 dark:text-gray-300 leading-relaxed"
+                                    className="text-gray-700 leading-relaxed"
                                     dangerouslySetInnerHTML={{ __html: blog.content }}
                                 />
                             )}
 
                             {/* Fallback to excerpt if no content */}
                             {!blog.content && blog.excerpt && (
-                                <div className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                <div className="text-gray-700 leading-relaxed">
                                     {blog.excerpt.split('\n').map((paragraph, index) => (
                                         <p key={index} className="mb-4">{paragraph}</p>
                                     ))}
@@ -271,9 +274,9 @@ export default async function BlogPostPage({ params }) {
 
                             {/* Content Images */}
                             {blog.contentImages && blog.contentImages.length > 0 && (
-                                <div className="mt-8 space-y-6">
+                                <div className="mt-8 space-y-6" aria-label="Blog content images">
                                     {blog.contentImages.map((image, index) => (
-                                        <div key={image._id || image.id || index} className="relative">
+                                        <figure key={image._id || image.id || index} className="relative">
                                             <Image
                                                 src={image.url}
                                                 alt={image.altText || `${blog.title} - Image ${index + 1}`}
@@ -283,92 +286,125 @@ export default async function BlogPostPage({ params }) {
                                                 sizes="(max-width: 768px) 100vw, 800px"
                                             />
                                             {image.altText && (
-                                                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center italic">
+                                                <figcaption className="text-sm text-gray-500 mt-2 text-center italic">
                                                     {image.altText}
-                                                </p>
+                                                </figcaption>
                                             )}
-                                        </div>
+                                        </figure>
                                     ))}
                                 </div>
                             )}
                         </div>
 
                         {/* Author Bio */}
-                        <div className="border-t border-gray-200 dark:border-gray-700 pt-8 mt-12">
+                        <section className="border-t border-gray-200 pt-8 mt-12" aria-label="Author bio">
                             <div className="flex items-start space-x-4">
-                                <div className="w-16 h-16 aspect-square bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
-                                    <User className="w-8 h-8 text-primary-600 dark:text-primary-400" />
+                                <div className="w-16 h-16 aspect-square bg-primary-100 rounded-full flex items-center justify-center" aria-hidden="true">
+                                    <User className="w-8 h-8 text-primary-600" />
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{blog.author}</h3>
-                                    <p className="text-gray-600 dark:text-gray-300 mt-1">
+                                    <h3 className="text-lg font-semibold">{blog.author}</h3>
+                                    <p className="text-gray-600 mt-1">
                                         Web optimization expert and developer advocate passionate about creating
                                         high-performance, accessible digital experiences.
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                     </article>
 
                     {/* Related Posts */}
                     {relatedBlogs.length > 0 && (
-                        <div className="max-w-6xl mx-auto mt-16">
-                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Related Articles</h2>
-                            <div className="grid md:grid-cols-3 gap-8">
-                                {relatedBlogs.map((relatedBlog) => (
-                                    <article key={relatedBlog._id || relatedBlog.id} className="card hover:shadow-xl dark:hover:shadow-2xl transition-shadow duration-300 group">
-                                        <div className="relative aspect-video rounded-lg overflow-hidden mb-4">
-                                            {relatedBlog.featuredImage?.url ? (
-                                                <Image
-                                                    src={relatedBlog.featuredImage.url}
-                                                    alt={relatedBlog.featuredImage.altText || relatedBlog.title}
-                                                    fill
-                                                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                                    sizes="(max-width: 768px) 100vw, 33vw"
-                                                />
-                                            ) : (
-                                                <div className="bg-gradient-to-br from-gray-100 dark:from-gray-700 to-gray-200 dark:to-gray-800 w-full h-full flex items-center justify-center">
-                                                    <span className="text-gray-500 dark:text-gray-400 text-sm">Related Post</span>
-                                                </div>
-                                            )}
-                                        </div>
+                        <section className="max-w-6xl mx-auto mt-16" aria-label="Related articles">
+                            <h2 className="text-2xl font-bold mb-8 gradient-text">Related Articles</h2>
+                           <div className="grid md:grid-cols-3 gap-8" role="list">
+  {relatedBlogs.map((relatedBlog) => (
+    <article
+      key={relatedBlog._id || relatedBlog.id}
+      className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white"
+      role="listitem"
+    >
+      {/* Blog Image */}
+      <figure className="relative aspect-video w-full">
+        {relatedBlog.featuredImage?.url ? (
+          <Image
+            src={relatedBlog.featuredImage.url}
+            alt={relatedBlog.featuredImage.altText || relatedBlog.title}
+            fill
+            className="object-fit"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        ) : (
+          <div className="bg-gradient-to-br from-gray-100 to-primary-100 w-full h-full flex items-center justify-center text-sm text-gray-400">
+            No Image
+          </div>
+        )}
+      </figure>
 
-                                        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
-                                            <Clock className="w-4 h-4 mr-2" />
-                                            {relatedBlog.publishedAt || relatedBlog.createdAt ?
-                                                new Date(relatedBlog.publishedAt || relatedBlog.createdAt).toLocaleDateString() :
-                                                'Recently'
-                                            }
-                                        </div>
+      {/* Card Content */}
+      <div className="p-5">
+        {/* Category Badge */}
+        <span className="inline-block mb-3 text-xs font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
+          technology
+        </span>
 
-                                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2">
-                                            {relatedBlog.title}
-                                        </h3>
-                                        <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm line-clamp-3">
-                                            {relatedBlog.excerpt}
-                                        </p>
-                                        <Link href={`/blog/${relatedBlog.slug}`} className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm">
-                                            Read More →
-                                        </Link>
-                                    </article>
-                                ))}
-                            </div>
-                        </div>
+        {/* Meta Info */}
+        <div className="flex items-center text-xs text-gray-500 mb-2 space-x-4">
+          <span className="flex items-center">
+            <Clock className="w-4 h-4 mr-1 text-primary-400" />
+            {relatedBlog.publishedAt || relatedBlog.createdAt
+              ? new Date(relatedBlog.publishedAt || relatedBlog.createdAt).toLocaleDateString()
+              : 'Recently'}
+          </span>
+          <span className="flex items-center">
+            <User className="w-4 h-4 mr-1 text-primary-400" />
+            Admin
+          </span>
+          <span className="flex items-center">
+            <Eye className="w-4 h-4 mr-1 text-primary-400" />
+            1
+          </span>
+        </div>
+
+        {/* Title */}
+        <h3 className="text-lg font-bold mb-2 line-clamp-2">
+          {relatedBlog.title}
+        </h3>
+
+        {/* Excerpt */}
+        <p className="text-sm text-gray-700 line-clamp-3 mb-4">
+          {relatedBlog.excerpt}
+        </p>
+
+        {/* Read More CTA */}
+        <Link
+          href={`/blog/${relatedBlog.slug}`}
+          className="text-blue-600 font-medium text-sm hover:text-blue-800"
+          aria-label={`Read more about ${relatedBlog.title}`}
+        >
+          Read Article →
+        </Link>
+      </div>
+    </article>
+  ))}                 
+</div>
+
+                        </section>
                     )}
 
                     {/* Newsletter CTA */}
-                    <div className="max-w-4xl mx-auto mt-16">
-                        <div className="card bg-gradient-to-r from-primary-50 dark:from-primary-900/20 to-purple-50 dark:to-purple-900/20 text-center">
+                    <section className="max-w-4xl mx-auto mt-16" aria-label="Newsletter signup">
+                        <div className="card bg-gradient-to-r from-primary-50 to-purple-50 text-center">
                             <NewsletterForm
                                 title="Get More Web Optimization Tips"
                                 description="Subscribe to our newsletter for the latest insights on web accessibility, performance, and SEO best practices."
                             />
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </div>
+            </section>
 
             <Footer />
-        </div>
+        </main>
     )
 } 

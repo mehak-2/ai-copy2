@@ -167,6 +167,24 @@ export default async function Home() {
                         Transform Your Business and Growth with
                         <span className="text-[#444CE7] font-semibold"> 360° Cutting-Edge Tech Solutions</span>
                       </p>
+                     <p className="text-base text-gray-700 mt-4 mb-2 max-w-md">
+  The Axto's team, responsible for development and design, is the same group leading innovation at Maxtron Innovations.
+</p>
+                      
+                       <Link
+                                   href="https://www.maxtron.ai/about"
+                          target="_blank"      rel="noopener noreferrer"
+                                className="group relative mt-3 inline-flex items-center justify-center gap-3  bg-[#444CE7] hover:to-purple-700 text-white font-semibold px-4 py-2.5 rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.0] transition-all duration-300 overflow-hidden"
+                            >
+                                <span className="relative z-20">  Meet the Team</span>
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 relative z-20" />
+
+                                {/* Shine effect - Fixed */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700 ease-in-out"></div>
+
+                                {/* Subtle pulse effect */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                            </Link>
                     </div>
                   </div>
                 </div>

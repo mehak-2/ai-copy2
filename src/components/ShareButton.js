@@ -33,7 +33,7 @@ export default function ShareButton({ title, excerpt, url }) {
     return (
         <button
             onClick={handleShare}
-            className="inline-flex items-center gap-2 text-primary-700 dark:text-primary-200 hover:text-primary-800 dark:hover:text-primary-100 font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-primary-700  hover:text-primary-800  font-medium transition-colors"
         >
             <Share2 className="w-4 h-4" />
             Share

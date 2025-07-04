@@ -64,40 +64,40 @@ export async function generateMetadata({ searchParams }) {
 // Loading component
 function BlogLoading() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900/20 transition-colors duration-200">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-purple-50 transition-colors duration-200">
             <Header />
             <div className="pt-20 mt-28 md:mt-20 lg:mt-20  pb-16">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Header */}
                     <div className="text-center mb-16">
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                             Blog
                         </h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                             Stay updated with the latest web optimization tips, best practices, and industry insights
                         </p>
                     </div>
 
                     {/* Search Skeleton */}
                     <div className="max-w-md mx-auto mb-8">
-                        <div className="h-12 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse"></div>
+                        <div className="h-12 bg-gray-200 rounded-lg animate-pulse"></div>
                     </div>
 
                     {/* Featured Post Skeleton */}
                     <div className="mb-16">
-                        <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-48 mb-8 animate-pulse"></div>
-                        <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg">
+                        <div className="h-6 bg-gray-200 rounded w-48 mb-8 animate-pulse"></div>
+                        <div className="bg-white rounded-xl p-8 shadow-lg">
                             <div className="flex flex-col lg:flex-row gap-8">
                                 <div className="lg:w-1/3">
-                                    <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse"></div>
+                                    <div className="aspect-video bg-gray-200 rounded-lg animate-pulse"></div>
                                 </div>
                                 <div className="lg:w-2/3">
-                                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/3 mb-4 animate-pulse"></div>
-                                    <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-4 animate-pulse"></div>
+                                    <div className="h-4 bg-gray-200 rounded w-1/3 mb-4 animate-pulse"></div>
+                                    <div className="h-8 bg-gray-200 rounded w-3/4 mb-4 animate-pulse"></div>
                                     <div className="space-y-2 mb-6">
-                                        <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
-                                        <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-5/6 animate-pulse"></div>
-                                        <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-4/6 animate-pulse"></div>
+                                        <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                                        <div className="h-4 bg-gray-200 w-5/6 animate-pulse"></div>
+                                        <div className="h-4 bg-gray-200 w-4/6 animate-pulse"></div>
                                     </div>
                                 </div>
                             </div>
@@ -106,16 +106,16 @@ function BlogLoading() {
 
                     {/* Grid Skeleton */}
                     <div>
-                        <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-32 mb-8 animate-pulse"></div>
+                        <div className="h-6 bg-gray-200 rounded w-32 mb-8 animate-pulse"></div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[...Array(6)].map((_, i) => (
-                                <div key={i} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                                    <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg mb-6 animate-pulse"></div>
-                                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/3 mb-3 animate-pulse"></div>
-                                    <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-3 animate-pulse"></div>
+                                <div key={i} className="bg-white rounded-xl p-6 shadow-lg">
+                                    <div className="aspect-video bg-gray-200 rounded-lg mb-6 animate-pulse"></div>
+                                    <div className="h-4 bg-gray-200 rounded w-1/3 mb-3 animate-pulse"></div>
+                                    <div className="h-6 bg-gray-200 rounded w-3/4 mb-3 animate-pulse"></div>
                                     <div className="space-y-2 mb-4">
-                                        <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
-                                        <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-5/6 animate-pulse"></div>
+                                        <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                                        <div className="h-4 bg-gray-200 w-5/6 animate-pulse"></div>
                                     </div>
                                 </div>
                             ))}
@@ -134,17 +134,17 @@ export default async function BlogPage({ searchParams }) {
     const page = parseInt(resolvedSearchParams?.page) || 1;
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900/20 transition-colors duration-200">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-purple-50 transition-colors duration-200">
             <Header />
 
             <div className="pt-20 mt-28 md:mt-20 lg:mt-20  pb-16">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Header */}
                     <div className="text-center mb-16">
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                             Blog
                         </h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                             Stay updated with the latest web optimization tips, best practices, and industry insights
                         </p>
                     </div>
@@ -158,7 +158,7 @@ export default async function BlogPage({ searchParams }) {
                     {/* Newsletter Signup */}
                     <div className="mt-16 text-center">
                         {/* <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8">Newsletter Signup</h2> */}
-                        <div className="card max-w-2xl mx-auto bg-gradient-to-r from-primary-50 dark:from-primary-900/20 to-purple-50 dark:to-purple-900/20">
+                        <div className="card max-w-2xl mx-auto bg-gradient-to-r from-primary-50 to-purple-50">
                             <NewsletterForm
                                 title="Stay Updated"
                                 description="Get the latest web optimization tips and best practices delivered to your inbox"

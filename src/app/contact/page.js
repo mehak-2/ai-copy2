@@ -109,17 +109,17 @@ export default function ContactPage() {
 
     if (isSubmitted) {
         return (
-            <div className="min-h-screen bg-white dark:bg-gray-900">
+            <div className="min-h-screen bg-white">
                 <Header />
                 <div className="pt-20 mt-28 md:mt-16 lg:mt-20  pb-16">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="max-w-2xl mx-auto text-center">
-                            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700">
-                                <CheckCircle className="w-16 h-16 text-green-500 dark:text-green-400 mx-auto mb-6" />
-                                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+                                <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
+                                <h1 className="text-3xl font-bold text-gray-900 mb-4">
                                     Thank You!
                                 </h1>
-                                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                                <p className="text-xl text-gray-600 mb-8">
                                     We've received your message and will get back to you within 24 hours.
                                 </p>
                                 <button
@@ -138,18 +138,18 @@ export default function ContactPage() {
     }
 
     return (
-        <div className="min-h-screen bg-white dark:bg-gray-900">
+        <div className="min-h-screen bg-white">
             <Header />
 
             <div className="pt-20 mt-28 md:mt-16 lg:mt-20  pb-16">
                 {/* Hero Section */}
-                <section className="bg-white dark:bg-gray-900 py-16">
+                <section className="bg-white py-16">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center max-w-3xl mx-auto">
-                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                                 Get in Touch
                             </h1>
-                            <p className="text-xl text-gray-600 dark:text-gray-300">
+                            <p className="text-xl text-gray-600">
                                 Have questions about website auditing? Want to discuss a custom solution?
                                 We'd love to hear from you
                             </p>
@@ -158,15 +158,15 @@ export default function ContactPage() {
                 </section>
 
                 {/* Contact Info */}
-                <section className="py-16 bg-white dark:bg-gray-900">
+                <section className="py-16 bg-white">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                             {contactInfo.map((info, index) => (
                                 <div key={index} className="text-center group">
-                                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full mb-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300">
+                                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-600 rounded-full mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                                         {info.icon}
                                     </div>
-                                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
                                         {info.title}
                                     </h3>
                                     <div className="space-y-1">
@@ -177,18 +177,18 @@ export default function ContactPage() {
                                                     href={info.action(detail)}
                                                     target={info.title === 'Office' ? '_blank' : undefined}
                                                     rel={info.title === 'Office' ? 'noopener noreferrer' : undefined}
-                                                    className="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200 block"
+                                                    className="text-primary-600 font-medium hover:text-primary-700 transition-colors duration-200 block"
                                                 >
                                                     {detail}
                                                 </Link>
                                             ) : (
-                                                <p key={idx} className="text-primary-600 dark:text-primary-400 font-medium">
+                                                <p key={idx} className="text-primary-600 font-medium">
                                                     {detail}
                                                 </p>
                                             )
                                         ))}
                                     </div>
-                                    <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
+                                    <p className="text-gray-600 text-sm mt-1">
                                         {info.description}
                                     </p>
                                 </div>
@@ -201,7 +201,7 @@ export default function ContactPage() {
                    <LeadCaptureSection />
 
                 {/* FAQ Section */}
-                <section className="py-20 bg-white dark:bg-gray-900">
+                <section className="py-20 bg-white">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-16">
@@ -209,7 +209,7 @@ export default function ContactPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5 }}
-                                    className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+                                    className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
                                 >
                                     Frequently Asked Questions
                                 </motion.h2>
@@ -223,13 +223,13 @@ export default function ContactPage() {
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                                        className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+                                        className="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
                                     >
                                         <button
                                             onClick={() => toggleFaq(index)}
-                                            className="w-full px-8 py-5 flex items-center justify-between text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                                            className="w-full px-8 py-5 flex items-center justify-between text-left hover:bg-gray-100 transition-colors duration-200"
                                         >
-                                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white pr-4">
+                                            <h3 className="text-lg font-semibold text-gray-900 pr-4">
                                                 {faq.question}
                                             </h3>
                                             <motion.div 
@@ -238,9 +238,9 @@ export default function ContactPage() {
                                                 transition={{ duration: 0.3 }}
                                             >
                                                 {openFaq === index ? (
-                                                    <Minus className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                                                    <Minus className="w-5 h-5 text-primary-600" />
                                                 ) : (
-                                                    <Plus className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                                                    <Plus className="w-5 h-5 text-primary-600" />
                                                 )}
                                             </motion.div>
                                         </button>
@@ -267,7 +267,7 @@ export default function ContactPage() {
                                                                 delay: 0.1,
                                                                 ease: "easeOut"
                                                             }}
-                                                            className="text-gray-600 dark:text-gray-300 leading-relaxed"
+                                                            className="text-gray-600 leading-relaxed"
                                                         >
                                                             {faq.answer}
                                                         </motion.p>

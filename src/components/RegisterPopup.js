@@ -17,7 +17,7 @@ const RegisterPopup = () => {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
   const [emailTouched, setEmailTouched] = useState(false);

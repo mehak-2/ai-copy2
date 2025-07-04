@@ -106,21 +106,21 @@ export default function BlogContent({ initialSearch = '', initialPage = 1 }) {
     // Error state
     if (error) {
         return (
-            <div className="text-center py-12">
-                <AlertCircle className="w-16 h-16 mx-auto mb-4 text-red-500" />
-                <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
+            <section className="text-center py-12" aria-label="Blog error message">
+                <AlertCircle className="w-16 h-16 mx-auto mb-4 text-red-500" aria-hidden="true" />
+                <h3 className="text-xl font-medium text-gray-900 mb-2">
                     Oops! Something went wrong
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                <p className="text-gray-600 mb-6">
                     {error}
                 </p>
                 <button
                     onClick={() => loadBlogs(searchTerm, currentPage)}
-                    className="btn btn-primary"
+                    className="btn-primary"
                 >
                     Try Again
                 </button>
-            </div>
+            </section>
         );
     }
 
@@ -129,16 +129,16 @@ export default function BlogContent({ initialSearch = '', initialPage = 1 }) {
     const otherPosts = blogs.slice(1);
 
     return (
-        <>
+        <main aria-label="Blog content main">
             {/* Search */}
             <BlogSearch onSearch={handleSearch} initialValue={searchTerm} />
 
             {/* Loading State */}
             {loading && (
-                <div className="text-center py-12">
-                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
-                    <p className="mt-4 text-gray-600 dark:text-gray-400">Loading blog posts...</p>
-                </div>
+                <section className="text-center py-12" aria-label="Loading blog posts">
+                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600" aria-hidden="true"></div>
+                    <p className="mt-4 text-gray-600">Loading blog posts...</p>
+                </section>
             )}
 
             {/* Content */}
@@ -146,8 +146,8 @@ export default function BlogContent({ initialSearch = '', initialPage = 1 }) {
                 <>
                     {/* Results info */}
                     {searchTerm && (
-                        <div className="mb-8 text-center">
-                            <p className="text-gray-600 dark:text-gray-400">
+                        <div className="mb-8 text-center" aria-live="polite">
+                            <p className="text-gray-600">
                                 {pagination.totalBlogs > 0
                                     ? `Found ${pagination.totalBlogs} ${pagination.totalBlogs === 1 ? 'result' : 'results'} for "${searchTerm}"`
                                     : `No results found for "${searchTerm}"`
@@ -160,15 +160,15 @@ export default function BlogContent({ initialSearch = '', initialPage = 1 }) {
                         <>
                             {/* Featured Post */}
                             {featuredPost && !searchTerm && currentPage === 1 && (
-                                <div className="mb-16">
-                                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Featured Post</h2>
+                                <section className="mb-16" aria-label="Featured blog post">
+                                    <h2 className="text-2xl font-bold mb-8">Featured Post</h2>
                                     <BlogCard blog={featuredPost} featured={true} />
-                                </div>
+                                </section>
                             )}
 
                             {/* All Posts Grid */}
-                            <div>
-                                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+                            <section aria-label="Blog post grid">
+                                <h2 className="text-2xl font-bold mb-8">
                                     {featuredPost && !searchTerm && currentPage === 1 ? 'Latest Posts' : 'All Posts'}
                                 </h2>
                                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -176,17 +176,18 @@ export default function BlogContent({ initialSearch = '', initialPage = 1 }) {
                                         <BlogCardHome key={blog._id || blog.id} blog={blog} />
                                     ))}
                                 </div>
-                            </div>
+                            </section>
 
                             {/* Pagination */}
                             {pagination.totalPages > 1 && (
-                                <div className="mt-12 flex items-center justify-center space-x-4">
+                                <nav className="mt-12 flex items-center justify-center space-x-4" aria-label="Blog pagination">
                                     <button
                                         onClick={() => handlePageChange(currentPage - 1)}
                                         disabled={!pagination.hasPrevPage}
-                                        className="flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700"
+                                        className="flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        aria-label="Previous page"
                                     >
-                                        <ChevronLeft className="w-4 h-4 mr-1" />
+                                        <ChevronLeft className="w-4 h-4 mr-1" aria-hidden="true" />
                                         Previous
                                     </button>
 
@@ -209,8 +210,10 @@ export default function BlogContent({ initialSearch = '', initialPage = 1 }) {
                                                     onClick={() => handlePageChange(pageNum)}
                                                     className={`px-3 py-2 text-sm font-medium rounded-md ${pageNum === currentPage
                                                         ? 'text-white bg-primary-600 border border-primary-600'
-                                                        : 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-50 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700'
+                                                        : 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-50'
                                                         }`}
+                                                    aria-current={pageNum === currentPage ? 'page' : undefined}
+                                                    aria-label={`Go to page ${pageNum}`}
                                                 >
                                                     {pageNum}
                                                 </button>
@@ -221,26 +224,27 @@ export default function BlogContent({ initialSearch = '', initialPage = 1 }) {
                                     <button
                                         onClick={() => handlePageChange(currentPage + 1)}
                                         disabled={!pagination.hasNextPage}
-                                        className="flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700"
+                                        className="flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        aria-label="Next page"
                                     >
                                         Next
-                                        <ChevronRight className="w-4 h-4 ml-1" />
+                                        <ChevronRight className="w-4 h-4 ml-1" aria-hidden="true" />
                                     </button>
-                                </div>
+                                </nav>
                             )}
                         </>
                     ) : (
                         !loading && (
-                            <div className="text-center py-12">
-                                <div className="text-gray-500 dark:text-gray-400 mb-4">
-                                    <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <section className="text-center py-12" aria-label="No blog posts found">
+                                <div className="text-gray-500 mb-4">
+                                    <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
+                                <h3 className="text-xl font-medium mb-2">
                                     {searchTerm ? 'No posts found' : 'No blog posts yet'}
                                 </h3>
-                                <p className="text-gray-600 dark:text-gray-400">
+                                <p className="text-gray-600">
                                     {searchTerm
                                         ? 'Try adjusting your search terms or browse all posts.'
                                         : 'Check back soon for new content about web optimization and best practices.'
@@ -249,16 +253,16 @@ export default function BlogContent({ initialSearch = '', initialPage = 1 }) {
                                 {searchTerm && (
                                     <button
                                         onClick={() => handleSearch('')}
-                                        className="mt-4 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium"
+                                        className="mt-4 text-primary-600 font-medium"
                                     >
                                         View all posts
                                     </button>
                                 )}
-                            </div>
+                            </section>
                         )
                     )}
                 </>
             )}
-        </>
+        </main>
     );
 } 

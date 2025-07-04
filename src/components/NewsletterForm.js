@@ -33,29 +33,37 @@ export default function NewsletterForm({ className = '', title, description, but
     return (
         <div className={className}>
             {title && (
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4" id="newsletter-title">
                     {title}
                 </h3>
             )}
             {description && (
-                <p className="text-gray-800 dark:text-gray-200 mb-6">
+                <p className="text-gray-800 mb-6" id="newsletter-desc">
                     {description}
                 </p>
             )}
 
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" aria-labelledby="newsletter-title" aria-describedby="newsletter-desc">
+                <label htmlFor="newsletter-email" className="sr-only">
+                    Email address
+                </label>
                 <input
+                    id="newsletter-email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="flex-1 px-4 py-3 border border-gray-400 dark:border-gray-500 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-700 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-colors duration-200"
+                    className="form-input flex-1"
                     disabled={isLoading}
+                    required
+                    aria-required="true"
+                    aria-label="Email address"
                 />
                 <button
                     type="submit"
                     className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
                     disabled={isLoading}
+                    aria-busy={isLoading}
                 >
                     {isLoading ? 'Subscribing...' : buttonText}
                 </button>
