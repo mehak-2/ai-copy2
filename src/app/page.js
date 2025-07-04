@@ -102,7 +102,7 @@ export default async function Home() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-start animate-fade-in-up animation-delay-400 mb-8 items-start">
                        
                         <Link
-                            href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`}
+                            href="https://app.axto.ai/audit"
                            
                             className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 bg-[#444CE7] hover:bg-[#3338C5] text-white font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden"
                         >

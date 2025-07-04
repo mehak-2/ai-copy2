@@ -73,7 +73,7 @@ const RegisterPopup = () => {
             >
               &times;
             </button>
-            <h2 className="text-2xl font-extrabold mb-6 text-center bg-[#444CE7] from-primary-600 via-purple-600 to-pink-500 bg-clip-text text-transparent   transition-colors">Register for Updates</h2>
+            <h2 className="text-2xl font-extrabold mb-6 text-center bg-gradient-to-r from-[#444CE7] via-purple-600 to-pink-500 bg-clip-text text-transparent transition-colors">Register for Updates</h2>
             <AnimatePresence mode="wait">
               {success ? (
                 <motion.div
