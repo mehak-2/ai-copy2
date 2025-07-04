@@ -72,7 +72,8 @@ export default async function Home() {
                 className="object-cover"
             />
            
-            <div className="absolute inset-0 z-0"></div>
+            {/* Add a semi-transparent overlay */}
+            <div className="absolute inset-0 bg-black/40 z-0"></div>
 
          
             <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
@@ -103,7 +104,7 @@ export default async function Home() {
                         <Link
                             href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`}
                            
-                            className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 bg-[#444CE7] hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+                            className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 bg-[#444CE7] hover:bg-[#3338C5] text-white font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden"
                         >
                             <Target className="w-5 h-5 relative z-20" />
                             <span className="relative z-20">Free EAA Audit</span>
@@ -167,7 +168,7 @@ export default async function Home() {
                         Transform Your Business and Growth with
                         <span className="text-[#444CE7] font-semibold"> 360° Cutting-Edge Tech Solutions</span>
                       </p>
-                     <p className="text-base text-gray-700 mt-4 mb-2 max-w-md">
+                     <p className="text-base text-gray-800 mt-4 mb-2 max-w-md">
   The Axto's team, responsible for development and design, is the same group leading innovation at Maxtron Innovations.
 </p>
                       
@@ -239,8 +240,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            {/* Additional Sections Below */}
-            {/* ... */}
+           
             <LeadCaptureSection />
 
             <Footer />

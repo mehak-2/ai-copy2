@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 
 const Globe = dynamic(() => import('lucide-react/dist/esm/icons/globe'), {
     loading: () => null,
-    ssr: true
+    ssr: false
 })
 
 const Zap = dynamic(() => import('lucide-react/dist/esm/icons/zap'), {
@@ -21,7 +21,6 @@ const BarChart3 = dynamic(() => import('lucide-react/dist/esm/icons/bar-chart-3'
 
 const Header = dynamic(() => import('@/components/Header'), {
     ssr: true,
-    loading: () => <div className="h-16 bg-[#111111]" />,
     loading: 'eager'
 })
 
@@ -187,7 +186,7 @@ export default function AboutPage() {
       <Link
         href="/contact"
         className="border-2 border-indigo-500 text-indigo-600 hover:bg-indigo-50 font-semibold py-3 px-8 rounded-xl transition duration-300"
-        prefetch={false}
+        prefetch={true}
       >
         Contact Sales
       </Link>
