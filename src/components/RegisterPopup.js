@@ -69,7 +69,7 @@ const RegisterPopup = () => {
             <button
               className="absolute top-3 right-3 text-gray-400  hover:text-primary-600  text-2xl transition-colors duration-200"
               onClick={handleClose}
-              aria-label="Close"
+              aria-label="Close registration popup"
             >
               &times;
             </button>
@@ -103,17 +103,28 @@ const RegisterPopup = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.3 }}
+                  role="form"
+                  aria-label="Registration form"
                 >
                   <div className="relative">
-                    <label htmlFor="register-email" className="block text-sm font-medium mb-2 text-gray-700 transition-colors">Email</label>
+                    <label 
+                      htmlFor="register-email" 
+                      className="block text-sm font-medium mb-2 text-gray-700 transition-colors"
+                    >
+                      Email Address
+                    </label>
                     <input
                       id="register-email"
+                      name="email"
                       type="email"
                       className={`form-input pr-10 ${isEmailValid && emailTouched ? 'border-green-400 ' : ''}`}
                       value={email}
                       onChange={e => { setEmail(e.target.value); setEmailTouched(true); }}
                       onBlur={() => setEmailTouched(true)}
                       required
+                      aria-label="Email address"
+                      aria-describedby={error ? "email-error" : undefined}
+                      aria-invalid={emailTouched && !isEmailValid}
                     />
                     <AnimatePresence>
                       {isEmailValid && emailTouched && (
@@ -124,6 +135,7 @@ const RegisterPopup = () => {
                           exit={{ scale: 0, opacity: 0 }}
                           transition={{ type: 'spring', stiffness: 400, damping: 20 }}
                           className="absolute right-3 top-9 text-green-500  transition-colors"
+                          aria-hidden="true"
                         >
                           <CheckCircle className="w-5 h-5" />
                         </motion.span>
@@ -131,24 +143,47 @@ const RegisterPopup = () => {
                     </AnimatePresence>
                   </div>
                   <div>
-                    <label htmlFor="register-phone" className="block text-sm font-medium mb-2 text-gray-700 transition-colors">Phone Number</label>
+                    <label 
+                      htmlFor="register-phone" 
+                      className="block text-sm font-medium mb-2 text-gray-700 transition-colors"
+                    >
+                      Phone Number
+                    </label>
                     <input
                       id="register-phone"
+                      name="phone"
                       type="tel"
                       className="form-input"
                       value={number}
                       onChange={e => setNumber(e.target.value)}
                       required
+                      aria-label="Phone number"
+                      aria-describedby={error ? "phone-error" : undefined}
                     />
                   </div>
-                  {error && <div className="text-red-500  text-sm text-center transition-colors">{error}</div>}
+                  {error && (
+                    <div 
+                      id="email-error"
+                      className="text-red-500 text-sm text-center transition-colors"
+                      role="alert"
+                      aria-live="polite"
+                    >
+                      {error}
+                    </div>
+                  )}
                   <button
                     type="submit"
                     className="w-full py-3 rounded-lg font-bold text-white bg-[#444CE7] hover:from-primary-700 hover:via-purple-700 hover:to-pink-600  shadow-lg transition-all duration-200 disabled:opacity-50"
                     disabled={loading}
+                    aria-describedby={loading ? "loading-status" : undefined}
                   >
                     {loading ? 'Registering...' : 'Register'}
                   </button>
+                  {loading && (
+                    <span id="loading-status" className="sr-only">
+                      Registration in progress
+                    </span>
+                  )}
                 </motion.form>
               )}
             </AnimatePresence>
