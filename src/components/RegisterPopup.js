@@ -105,8 +105,9 @@ const RegisterPopup = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="relative">
-                    <label className="block text-sm font-medium mb-2 text-gray-700 transition-colors">Email</label>
+                    <label htmlFor="register-email" className="block text-sm font-medium mb-2 text-gray-700 transition-colors">Email</label>
                     <input
+                      id="register-email"
                       type="email"
                       className={`form-input pr-10 ${isEmailValid && emailTouched ? 'border-green-400 ' : ''}`}
                       value={email}
@@ -130,8 +131,9 @@ const RegisterPopup = () => {
                     </AnimatePresence>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-700 transition-colors">Phone Number</label>
+                    <label htmlFor="register-phone" className="block text-sm font-medium mb-2 text-gray-700 transition-colors">Phone Number</label>
                     <input
+                      id="register-phone"
                       type="tel"
                       className="form-input"
                       value={number}
