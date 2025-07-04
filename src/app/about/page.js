@@ -3,7 +3,7 @@ import { Globe, Zap, Shield, BarChart3 } from 'lucide-react'
 import dynamic from 'next/dynamic'
 
 const Header = dynamic(() => import('@/components/Header'), {
-    ssr: false,
+    ssr: true,
     loading: () => <div className="h-16 bg-[#111111]" />
 })
 
