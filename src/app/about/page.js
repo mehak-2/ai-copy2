@@ -1,6 +1,23 @@
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import { Globe, Zap, Shield, BarChart3 } from '@/components/IconComponents'
+
+const Globe = dynamic(() => import('lucide-react/dist/esm/icons/globe'), {
+    loading: () => null,
+    ssr: true
+})
+
+const Zap = dynamic(() => import('lucide-react/dist/esm/icons/zap'), {
+    loading: () => null,
+    ssr: true
+})
+const Shield = dynamic(() => import('lucide-react/dist/esm/icons/shield'), {
+    loading: () => null,
+    ssr: true
+})
+const BarChart3 = dynamic(() => import('lucide-react/dist/esm/icons/bar-chart-3'), {
+    loading: () => null,
+    ssr: true
+})
 
 const Header = dynamic(() => import('@/components/Header'), {
     ssr: true,
