@@ -1,14 +1,33 @@
 import Link from 'next/link'
-import { Globe, Zap, Shield, BarChart3 } from 'lucide-react'
 import dynamic from 'next/dynamic'
+
+const Globe = dynamic(() => import('lucide-react/dist/esm/icons/globe'), {
+    loading: () => null,
+    ssr: false
+})
+
+const Zap = dynamic(() => import('lucide-react/dist/esm/icons/zap'), {
+    loading: () => null,
+    ssr: false
+})
+const Shield = dynamic(() => import('lucide-react/dist/esm/icons/shield'), {
+    loading: () => null,
+    ssr: false
+})
+const BarChart3 = dynamic(() => import('lucide-react/dist/esm/icons/bar-chart-3'), {
+    loading: () => null,
+    ssr: false
+})
 
 const Header = dynamic(() => import('@/components/Header'), {
     ssr: true,
-    loading: () => <div className="h-16 bg-[#111111]" />
+    loading: () => <div className="h-16 bg-[#111111]" />,
+    loading: 'eager'
 })
 
 const Footer = dynamic(() => import('@/components/Footer'), {
-    ssr: true
+    ssr: true,
+    loading: 'lazy'
 })
 
 export const metadata = {
@@ -48,9 +67,9 @@ export default function AboutPage() {
 
     return (
         <div className="min-h-screen bg-white">
-            <Header />
+            <Header priority />
 
-            <div className="pt-20 mt-28 md:mt-16 lg:mt-20  pb-16">
+            <div className="pt-20 mt-28 md:mt-16 lg:mt-20 pb-16">
                 <section className="bg-white py-16">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center max-w-4xl mx-auto">
@@ -100,14 +119,14 @@ export default function AboutPage() {
                                  But compliance isn't just about avoiding penalties, it's smart business. With 87 million people in the EU (and over 1.3 billion worldwide) living with some form of disability, accessible design directly translates to broader reach, stronger loyalty, and higher conversion. 
                                 </p>
                                 <p className="text-lg leading-relaxed mb-6">
-                                   We're also deeply committed to the environment. Accessible websites and  <a href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`} className='text-primary-600'>platforms </a>
-                                     load faster and use considerably less energy. Moreover, they perform better in search and create smoother user experiences across the board. <a href='https://www.axto.ai/' className='text-primary-600'>axto.ai</a> more than pays for itself in savings and try to improve results. 
+                                   We're also deeply committed to the environment. Accessible websites and  <Link href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`} className='text-primary-600' prefetch={false}>platforms </Link>
+                                     load faster and use considerably less energy. Moreover, they perform better in search and create smoother user experiences across the board. <Link href='https://www.axto.ai/' className='text-primary-600' prefetch={false}>axto.ai</Link> more than pays for itself in savings and try to improve results. 
                                 </p>
                                 <p className="text-lg leading-relaxed mb-6">
-                                 Importantly, <a href='https://www.axto.ai/' className='text-primary-600'>axto.ai</a> goes way beyond the competition, diving deep into the EAA's EN 301 549 standard, automatically detecting and localizing over 160 types of accessibility issues—right down to the line of code. Then, depending on your  <a href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`} className='text-primary-600'>platform</a>, many fixes are just a few clicks away. Others only review for WCAG or ADA violations, potentially leaving their clients exposed to the EAA's stricter standards. 
+                                 Importantly, <Link href='https://www.axto.ai/' className='text-primary-600' prefetch={false}>axto.ai</Link> goes way beyond the competition, diving deep into the EAA's EN 301 549 standard, automatically detecting and localizing over 160 types of accessibility issues—right down to the line of code. Then, depending on your  <Link href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`} className='text-primary-600' prefetch={false}>platform</Link>, many fixes are just a few clicks away. Others only review for WCAG or ADA violations, potentially leaving their clients exposed to the EAA's stricter standards. 
                                 </p>
                                 <p className="text-lg leading-relaxed mb-6">
-                                 What shocked us most is that over 95% of the websites we review have excessive violations! For example, WordPress, Shopify, Squarespace, and other builder  <a href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`} className='text-primary-600'>platforms</a> do not use semantic html and can't be read by an eReader. <a href='https://www.axto.ai/' className='text-primary-600'>axto.ai</a> not only helps you identify problems, it provides solutions. Even if the problem is your  <a href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`} className='text-primary-600'>platform</a>, we can help you try to fix maximum issue for better accessibility of your website. 
+                                 What shocked us most is that over 95% of the websites we review have excessive violations! For example, WordPress, Shopify, Squarespace, and other builder  <Link href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`} className='text-primary-600' prefetch={false}>platforms</Link> do not use semantic html and can't be read by an eReader. <Link href='https://www.axto.ai/' className='text-primary-600' prefetch={false}>axto.ai</Link> not only helps you identify problems, it provides solutions. Even if the problem is your  <Link href={`${process.env.NEXT_PUBLIC_FREE_AUDIT}`} className='text-primary-600' prefetch={false}>platform</Link>, we can help you try to fix maximum issue for better accessibility of your website. 
                                 </p>
                             </div>
                         </div>
@@ -149,23 +168,26 @@ export default function AboutPage() {
      Ready to Elevate Your Website?
     </h2>
     <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-     Join thousands of developers, marketers, and businesses who trust  <a
-        href="https://www.axto.ai/" target="_blank"
+     Join thousands of developers, marketers, and businesses who trust  <Link
+        href="https://www.axto.ai/"
         className="text-indigo-600 font-semibold hover:underline"
+        prefetch={false}
       >
         axto.ai
-      </a> to enhance accessibility, performance, and SEO—powered by intelligent auditing and actionable insights
+      </Link> to enhance accessibility, performance, and SEO—powered by intelligent auditing and actionable insights
     </p>
     <div className="flex flex-col sm:flex-row gap-4 justify-center">
       <Link
         href="https://app.axto.ai/audit"
         className="bg-gradient-to-r from-indigo-500 to-violet-500 text-white hover:from-indigo-600 hover:to-violet-600 font-semibold py-3 px-8 rounded-xl shadow-md transition duration-300 ease-in-out"
+        prefetch={false}
       >
         Try Free Audit
       </Link>
       <Link
         href="/contact"
         className="border-2 border-indigo-500 text-indigo-600 hover:bg-indigo-50 font-semibold py-3 px-8 rounded-xl transition duration-300"
+        prefetch={false}
       >
         Contact Sales
       </Link>
