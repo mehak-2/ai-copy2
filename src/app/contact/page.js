@@ -166,9 +166,9 @@ export default function ContactPage() {
                                     <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-600 rounded-full mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                                         {info.icon}
                                     </div>
-                                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                                    <h2 className="text-lg font-semibold text-gray-900 mb-2">
                                         {info.title}
-                                    </h3>
+                                    </h2>
                                     <div className="space-y-1">
                                         {info.details.map((detail, idx) => (
                                             info.action ? (
