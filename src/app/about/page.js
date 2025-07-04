@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 
 const Globe = dynamic(() => import('lucide-react/dist/esm/icons/globe'), {
     loading: () => null,
-    ssr: false
+    ssr: true
 })
 
 const Zap = dynamic(() => import('lucide-react/dist/esm/icons/zap'), {
