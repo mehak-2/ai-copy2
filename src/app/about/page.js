@@ -8,6 +8,8 @@ const Globe = dynamic(() => import('lucide-react/dist/esm/icons/globe'), {
 
 const Zap = dynamic(() => import('lucide-react/dist/esm/icons/zap'), {
     loading: () => null,
+
+    
     ssr: true
 })
 const Shield = dynamic(() => import('lucide-react/dist/esm/icons/shield'), {
